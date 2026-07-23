@@ -1,9 +1,8 @@
 extends Node2D
 
-signal scene_changed(target_scene_name: String)
-
 @onready var play_button: ChangeSceneButton = $CanvasLayer/VBoxContainer/ChangeSceneButton
-var target_scene: String
+
+signal scene_changed(target_scene_name: String)
 
 func _ready() -> void:
 	play_button.passed_target_information.connect(handle_scene_request)

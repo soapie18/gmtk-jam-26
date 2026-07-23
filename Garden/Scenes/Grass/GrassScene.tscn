@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dajel0bnqxcum"]
+
+[ext_resource type="Script" uid="uid://h52mvnl2r4du" path="res://Garden/Scenes/Grass/grass_scene.gd" id="1_hfxly"]
+[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_hw70u"]
+[ext_resource type="Script" uid="uid://cph0g1c6n06yh" path="res://UI/change_scene_button.gd" id="3_hfxly"]
+
+[node name="GrassScene" type="Node2D"]
+script = ExtResource("1_hfxly")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.4745098, 0.8392157, 0.14509805, 1)
+position = Vector2(597, 299)
+texture = ExtResource("2_hw70u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TreetopButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.5
+offset_right = 25.5
+offset_bottom = 51.0
+grow_horizontal = 2
+script = ExtResource("3_hfxly")
+target_name = "treetop"
+metadata/_custom_type_script = "uid://cph0g1c6n06yh"
+
+[node name="PondButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -28.0
+offset_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_hfxly")
+target_name = "pond"
+metadata/_custom_type_script = "uid://cph0g1c6n06yh"
+
+[connection signal="pressed" from="CanvasLayer/TreetopButton" to="CanvasLayer/TreetopButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PondButton" to="CanvasLayer/PondButton" method="_on_pressed"]

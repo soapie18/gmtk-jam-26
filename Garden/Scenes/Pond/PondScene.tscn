@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcwd7apyuhclv"]
+
+[ext_resource type="Script" uid="uid://b31mdnkgrdo2y" path="res://Garden/Scenes/Pond/pond_scene.gd" id="1_t2kks"]
+[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_t2kks"]
+[ext_resource type="Script" uid="uid://cph0g1c6n06yh" path="res://UI/change_scene_button.gd" id="3_t2kks"]
+
+[node name="PondScene" type="Node2D"]
+script = ExtResource("1_t2kks")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.3773945, 0.99999994, 0.882924, 1)
+position = Vector2(569, 314)
+texture = ExtResource("2_t2kks")
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="GrassButton" type="Button" parent="Canvas"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -26.5
+offset_right = 56.0
+offset_bottom = 26.5
+grow_vertical = 2
+script = ExtResource("3_t2kks")
+target_name = "grass"
+metadata/_custom_type_script = "uid://cph0g1c6n06yh"
+
+[connection signal="pressed" from="Canvas/GrassButton" to="Canvas/GrassButton" method="_on_pressed"]
