@@ -1,10 +1,12 @@
 extends Node2D
 
-@export var scene_name: String
+signal scene_changed(target_scene_name: String)
 
-signal scene_changed(current_scene_name: String)
+@onready var play_button: ChangeSceneButton = $CanvasLayer/VBoxContainer/ChangeSceneButton
+var target_scene: String
 
+func _ready() -> void:
+	play_button.passed_target_information.connect(handle_scene_request)
 
-# Play button.
-func _on_button_pressed() -> void:
-	scene_changed.emit("main menu")
+func handle_scene_request(target_scene_name: String) -> void:
+	scene_changed.emit(target_scene_name)

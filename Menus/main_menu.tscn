@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dopgt5elscy3k"]
+[gd_scene load_steps=5 format=3 uid="uid://dopgt5elscy3k"]
 
 [ext_resource type="PackedScene" uid="uid://b58jml1i3xy7e" path="res://Menus/Menus - Audio/menu_music.tscn" id="1_jf8mj"]
 [ext_resource type="Script" uid="uid://hd443818uhcs" path="res://Menus/main_menu.gd" id="1_p3jrs"]
 [ext_resource type="Theme" uid="uid://cx00si32fjbga" path="res://Menus/Menus - Art/title_theme.tres" id="3_at0u2"]
+[ext_resource type="PackedScene" uid="uid://b8gleo3k6i3fb" path="res://UI/ChangeSceneButton.tscn" id="4_11gta"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_p3jrs")
@@ -39,8 +40,7 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="ChangeSceneButton" parent="CanvasLayer/VBoxContainer" instance=ExtResource("4_11gta")]
 layout_mode = 2
 text = "play"
-
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+target_name = "grass"
