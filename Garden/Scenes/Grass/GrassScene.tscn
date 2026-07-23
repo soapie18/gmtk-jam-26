@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dajel0bnqxcum"]
+[gd_scene load_steps=5 format=3 uid="uid://dajel0bnqxcum"]
 
 [ext_resource type="Script" uid="uid://h52mvnl2r4du" path="res://Garden/Scenes/Grass/grass_scene.gd" id="1_hfxly"]
 [ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_hw70u"]
 [ext_resource type="Script" uid="uid://cph0g1c6n06yh" path="res://UI/change_scene_button.gd" id="3_hfxly"]
+[ext_resource type="PackedScene" uid="uid://be0soylfpuqqu" path="res://Interactables/InteractableTest.tscn" id="4_hw70u"]
 
 [node name="GrassScene" type="Node2D"]
 script = ExtResource("1_hfxly")
@@ -40,6 +41,9 @@ grow_vertical = 2
 script = ExtResource("3_hfxly")
 target_name = "pond"
 metadata/_custom_type_script = "uid://cph0g1c6n06yh"
+
+[node name="InteractableTest" parent="." instance=ExtResource("4_hw70u")]
+position = Vector2(285, 431)
 
 [connection signal="pressed" from="CanvasLayer/TreetopButton" to="CanvasLayer/TreetopButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PondButton" to="CanvasLayer/PondButton" method="_on_pressed"]
