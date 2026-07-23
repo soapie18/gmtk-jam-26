@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0lahqmcgellv"]
+
+[ext_resource type="PackedScene" uid="uid://ccskx7lgigl0o" path="res://Systems/interaction_system.tscn" id="1_ga2sg"]
+[ext_resource type="PackedScene" uid="uid://c21lhaeoxjq5p" path="res://Systems/inventory_system.tscn" id="2_3ktl8"]
+
+[node name="Player" type="Node2D"]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="InteractionSystem" parent="." instance=ExtResource("1_ga2sg")]
+
+[node name="InventorySystem" parent="." instance=ExtResource("2_3ktl8")]

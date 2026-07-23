@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://s8diqt1jbwjr"]
+
+[ext_resource type="Script" uid="uid://cdc35fpjrk85t" path="res://Menus/pause_window.gd" id="1_5eto6"]
+
+[node name="PauseWindow" type="CanvasLayer"]
+script = ExtResource("1_5eto6")
+scene_name = "garden"

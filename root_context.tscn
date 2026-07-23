@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://n0jpfh3ktu37"]
+
+[ext_resource type="Script" uid="uid://d0ai4yt8w12sc" path="res://root_context.gd" id="1_qtp4p"]
+[ext_resource type="PackedScene" uid="uid://byx605tuw0rf5" path="res://Systems/audio_manager.tscn" id="2_3etme"]
+
+[node name="RootContext" type="Node2D"]
+script = ExtResource("1_qtp4p")
+
+[node name="AudioManager" parent="." instance=ExtResource("2_3etme")]

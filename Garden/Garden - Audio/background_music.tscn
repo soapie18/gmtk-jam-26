@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://2l3it5qq4b6d"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
