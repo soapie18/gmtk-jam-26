@@ -11,6 +11,8 @@ extends Node2D
 @onready var current_scene: PackedScene = main_menu
 var current_scene_instance
 
+signal scene_inventory_changed(item_name_tag: String)
+
 func _ready() -> void:
 	# Booting up the main menu as the current level on launch.
 	current_scene_instance = current_scene.instantiate()
@@ -20,10 +22,13 @@ func _ready() -> void:
 	# what scene is being requested via a string.
 	current_scene_instance.scene_changed.connect(handle_scene_change)
 	
+	current_scene_instance.item_collected.connect(handle_item_picked_up)
+	
 	###pause_menu.game_paused.connect(handle_pause)
 
 func handle_scene_change(target_scene_name: String) -> void:
 	var new_scene: PackedScene
+	
 	# Seeing which scene is requested from signal sent. Assigning it to
 	# new_scene to be instantiated soon.
 	match target_scene_name:
@@ -37,16 +42,24 @@ func handle_scene_change(target_scene_name: String) -> void:
 			new_scene = pond_scene
 		_:
 			return
+	
 	# Instantiating the new scene.
 	var new_scene_instance = new_scene.instantiate()
+	#new_scene_instance.setup_self()
 	add_child(new_scene_instance)
 	
 	new_scene_instance.scene_changed.connect(handle_scene_change)
+	new_scene_instance.item_picked_up_in_scene.connect(handle_item_picked_up)
+	
 	# Cleanup.
 	current_scene_instance.queue_free()
 	current_scene_instance = new_scene_instance
 
 
+func handle_item_picked_up(item_name_tag: String, _scene_name: String) -> void:
+	scene_inventory_changed.emit(item_name_tag)
+	
+	
 
 func handle_pause() -> void:
 	pass

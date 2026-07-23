@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dajel0bnqxcum"]
+[gd_scene load_steps=7 format=3 uid="uid://dajel0bnqxcum"]
 
 [ext_resource type="Script" uid="uid://h52mvnl2r4du" path="res://Garden/Scenes/Grass/grass_scene.gd" id="1_hfxly"]
 [ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_hw70u"]
 [ext_resource type="Script" uid="uid://cph0g1c6n06yh" path="res://UI/change_scene_button.gd" id="3_hfxly"]
-[ext_resource type="PackedScene" uid="uid://be0soylfpuqqu" path="res://Interactables/InteractableTest.tscn" id="4_hw70u"]
+[ext_resource type="PackedScene" uid="uid://wlvvbfpmbt57" path="res://Interactables/Pickups/Pickups - Scenes/FeatherPickup.tscn" id="4_hw70u"]
+[ext_resource type="PackedScene" uid="uid://ddro13bybuvku" path="res://Interactables/Pickups/Pickups - Scenes/MonarchCaterpillarPickup.tscn" id="5_2rjrf"]
+[ext_resource type="PackedScene" uid="uid://p3dgijjle0k" path="res://Interactables/Pickups/Pickups - Scenes/TwigPickup.tscn" id="6_0eh24"]
 
 [node name="GrassScene" type="Node2D"]
 script = ExtResource("1_hfxly")
+scene_name = "grass"
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(0.4745098, 0.8392157, 0.14509805, 1)
@@ -42,8 +45,16 @@ script = ExtResource("3_hfxly")
 target_name = "pond"
 metadata/_custom_type_script = "uid://cph0g1c6n06yh"
 
-[node name="InteractableTest" parent="." instance=ExtResource("4_hw70u")]
-position = Vector2(285, 431)
+[node name="FeatherPickup" parent="." instance=ExtResource("4_hw70u")]
+position = Vector2(361, 440)
+
+[node name="MonarchCaterpillarPickup" parent="." instance=ExtResource("5_2rjrf")]
+
+[node name="MonarchCaterpillarPickup2" parent="." instance=ExtResource("5_2rjrf")]
+
+[node name="MonarchCaterpillarPickup3" parent="." instance=ExtResource("5_2rjrf")]
+
+[node name="TwigPickup" parent="." instance=ExtResource("6_0eh24")]
 
 [connection signal="pressed" from="CanvasLayer/TreetopButton" to="CanvasLayer/TreetopButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PondButton" to="CanvasLayer/PondButton" method="_on_pressed"]

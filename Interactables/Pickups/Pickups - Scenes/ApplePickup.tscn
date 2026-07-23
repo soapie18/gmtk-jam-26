@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbgd68paeyixe"]
+
+[ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_cvbvr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvbvr"]
+
+[node name="ApplePickup" type="Node2D"]
+script = ExtResource("1_cvbvr")
+name_tag = "apple"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CapsuleShape2D_cvbvr")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

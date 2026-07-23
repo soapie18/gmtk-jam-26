@@ -4,6 +4,8 @@ extends Node2D
 
 signal scene_changed(target_scene_name: String)
 
+signal item_picked_up_in_scene(item_name_tag: String, scene_name: String)
+
 func _ready() -> void:
 	grass_button.passed_target_information.connect(handle_scene_request)
 

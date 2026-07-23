@@ -4,6 +4,9 @@ extends Node2D
 
 signal scene_changed(target_scene_name: String)
 
+# Please ignore, I had to include it so that scene_manager wouldn't kick off
+signal item_collected(item_name_tag: String)
+
 func _ready() -> void:
 	play_button.passed_target_information.connect(handle_scene_request)
 

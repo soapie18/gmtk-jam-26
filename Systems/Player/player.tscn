@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lahqmcgellv"]
+
+[ext_resource type="Script" uid="uid://ij1vukjiq3cs" path="res://Systems/Player/player_script.gd" id="1_pc2b8"]
+[ext_resource type="PackedScene" uid="uid://c21lhaeoxjq5p" path="res://Systems/Player/inventory_system.tscn" id="3_mqks5"]
+[ext_resource type="Script" uid="uid://j7ntix0ijf75" path="res://Systems/Player/player_ui.gd" id="4_wc1dy"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_pc2b8")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="InventorySystem" parent="." instance=ExtResource("3_mqks5")]
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+script = ExtResource("4_wc1dy")
+
+[node name="InventoryView" type="Button" parent="PlayerUI"]
+offset_left = 79.0
+offset_top = 568.0
+offset_right = 87.0
+offset_bottom = 576.0
+text = "inventory button"
+
+[connection signal="pressed" from="PlayerUI/InventoryView" to="PlayerUI" method="_on_inventory_view_pressed"]
