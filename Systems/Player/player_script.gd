@@ -1,10 +1,19 @@
 extends Node2D
 
 @onready var inventory_system = $InventorySystem
+@onready var minigame_manager = $"../MinigameManager"
 @onready var scene_manager = $"../SceneManager"
+
+var inventory_check_result: bool
 
 func _ready() -> void:
 	scene_manager.scene_inventory_changed.connect(handle_inventory_change)
+	minigame_manager.minigame_inventory_query.connect(send_inventory_query)
 
 func handle_inventory_change(item_name_tag: String) -> void:
 	inventory_system.update_inventory(item_name_tag)
+
+func send_inventory_query(items_required: Array) -> void:
+	inventory_check_result = inventory_system.check_for_items_in_inventory(items_required)
+	
+	minigame_manager.can_start_minigame = true

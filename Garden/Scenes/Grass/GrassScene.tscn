@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dajel0bnqxcum"]
+[gd_scene load_steps=9 format=3 uid="uid://dajel0bnqxcum"]
 
 [ext_resource type="Script" uid="uid://h52mvnl2r4du" path="res://Garden/Scenes/Grass/grass_scene.gd" id="1_hfxly"]
 [ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_hw70u"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://wlvvbfpmbt57" path="res://Interactables/Pickups/Pickups - Scenes/FeatherPickup.tscn" id="4_hw70u"]
 [ext_resource type="PackedScene" uid="uid://ddro13bybuvku" path="res://Interactables/Pickups/Pickups - Scenes/MonarchCaterpillarPickup.tscn" id="5_2rjrf"]
 [ext_resource type="PackedScene" uid="uid://p3dgijjle0k" path="res://Interactables/Pickups/Pickups - Scenes/TwigPickup.tscn" id="6_0eh24"]
+[ext_resource type="PackedScene" uid="uid://btnynbt2moifi" path="res://Interactables/Minigames and Tasks/cat_bowl.tscn" id="7_0eh24"]
+[ext_resource type="PackedScene" uid="uid://en8mmvro3bud" path="res://Interactables/Minigames and Tasks/leaves.tscn" id="8_wqhcx"]
 
 [node name="GrassScene" type="Node2D"]
 script = ExtResource("1_hfxly")
@@ -50,11 +52,11 @@ position = Vector2(361, 440)
 
 [node name="MonarchCaterpillarPickup" parent="." instance=ExtResource("5_2rjrf")]
 
-[node name="MonarchCaterpillarPickup2" parent="." instance=ExtResource("5_2rjrf")]
-
-[node name="MonarchCaterpillarPickup3" parent="." instance=ExtResource("5_2rjrf")]
-
 [node name="TwigPickup" parent="." instance=ExtResource("6_0eh24")]
+
+[node name="CatBowl" parent="." instance=ExtResource("7_0eh24")]
+
+[node name="Leaves" parent="." instance=ExtResource("8_wqhcx")]
 
 [connection signal="pressed" from="CanvasLayer/TreetopButton" to="CanvasLayer/TreetopButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PondButton" to="CanvasLayer/PondButton" method="_on_pressed"]

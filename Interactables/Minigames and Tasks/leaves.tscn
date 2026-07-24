@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://en8mmvro3bud"]
+
+[ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_q6kfv"]
+
+[node name="Leaves" type="Node2D"]
+script = ExtResource("1_q6kfv")
+minigame_tag = "leaves"

@@ -9,13 +9,17 @@ extends Node2D
 # Pickups found in this scene.
 @onready var feather_pickup = $FeatherPickup
 @onready var twig_pickup = $TwigPickup
-@onready var monarch_caterpillar_1 = $MonarchCaterpillarPickup
-@onready var monarch_caterpillar_2 = $MonarchCaterpillarPickup2
-@onready var monarch_caterpillar_3 = $MonarchCaterpillarPickup3
+@onready var monarch_caterpillars = $MonarchCaterpillarPickup
+
+# Minigames found in this scene.
+@onready var leaves = $Leaves
+@onready var cat_bowl = $CatBowl
 
 signal scene_changed(target_scene_name: String)
 
 signal item_picked_up_in_scene(item_name_tag: String, scene_name: String)
+
+signal minigame_requested_in_scene(minigame_name_tag: String)
 
 func _ready() -> void:
 	# Connecting to signals to be the middleman between buttons pressed and 
@@ -27,15 +31,24 @@ func _ready() -> void:
 	# this scene, which scene_manager and player will want to know. 
 	feather_pickup.item_collected.connect(respond_to_item_pickup)
 	twig_pickup.item_collected.connect(respond_to_item_pickup)
-	monarch_caterpillar_1.item_collected.connect(respond_to_item_pickup)
-	monarch_caterpillar_2.item_collected.connect(respond_to_item_pickup)
-	monarch_caterpillar_3.item_collected.connect(respond_to_item_pickup)
+	monarch_caterpillars.item_collected.connect(respond_to_item_pickup)
+	
+	# Connecting to signal emitted by minigame items to say a minigame has
+	# been requested. Minigame manager and inventory will also be involved.
+	leaves.minigame_requested.connect(handle_minigame_request)
+	cat_bowl.minigame_requested.connect(handle_minigame_request)
+
+
+func handle_minigame_request(minigame_name_tag: String):
+	# Picked up in scene_manager.
+	minigame_requested_in_scene.emit(minigame_name_tag)
+
 
 func handle_scene_request(target_scene_name) -> void:
+	# Picked up in scene_manager.
 	scene_changed.emit(target_scene_name)
 
-func respond_to_item_pickup(item_name_tag: String):
-	item_picked_up_in_scene.emit(item_name_tag, scene_name)
 
-func setup_self() -> void:
-	pass
+func respond_to_item_pickup(item_name_tag: String):
+	# Picked up in scene_manager.
+	item_picked_up_in_scene.emit(item_name_tag, scene_name)

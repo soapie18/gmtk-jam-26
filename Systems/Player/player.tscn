@@ -21,4 +21,10 @@ offset_right = 87.0
 offset_bottom = 576.0
 text = "inventory button"
 
+[node name="Label" type="Label" parent="PlayerUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextCooldown" type="Timer" parent="PlayerUI"]
+
 [connection signal="pressed" from="PlayerUI/InventoryView" to="PlayerUI" method="_on_inventory_view_pressed"]

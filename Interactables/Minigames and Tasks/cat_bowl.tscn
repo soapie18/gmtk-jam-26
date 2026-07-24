@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://btnynbt2moifi"]
+
+[ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_3cjo6"]
+
+[node name="CatBowl" type="Node2D"]
+script = ExtResource("1_3cjo6")
+minigame_tag = "cat bowl"

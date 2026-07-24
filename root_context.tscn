@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://n0jpfh3ktu37"]
+[gd_scene load_steps=6 format=3 uid="uid://n0jpfh3ktu37"]
 
 [ext_resource type="Script" uid="uid://d0ai4yt8w12sc" path="res://root_context.gd" id="1_qtp4p"]
 [ext_resource type="PackedScene" uid="uid://byx605tuw0rf5" path="res://Systems/Audio/audio_manager.tscn" id="2_3etme"]
 [ext_resource type="PackedScene" uid="uid://dysy2i21qnsxg" path="res://Systems/Scene Management/scene_manager.tscn" id="2_mxl43"]
 [ext_resource type="PackedScene" uid="uid://b0lahqmcgellv" path="res://Systems/Player/player.tscn" id="3_xp8r7"]
+[ext_resource type="PackedScene" uid="uid://b2pqim01lg8ll" path="res://Systems/Scene Management/minigame_manager.tscn" id="5_xp8r7"]
 
 [node name="RootContext" type="Node2D"]
 script = ExtResource("1_qtp4p")
@@ -13,3 +14,5 @@ script = ExtResource("1_qtp4p")
 [node name="Player" parent="." instance=ExtResource("3_xp8r7")]
 
 [node name="AudioManager" parent="." instance=ExtResource("2_3etme")]
+
+[node name="MinigameManager" parent="." instance=ExtResource("5_xp8r7")]

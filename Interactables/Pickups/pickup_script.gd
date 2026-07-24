@@ -7,8 +7,6 @@ extends Node2D
 var default_sprite_scale: Vector2
 var sprite_scale_multiplier: float = 1.1
 
-@export var isCollected: bool
-
 signal item_collected(item_name_tag)
 
 
