@@ -16,7 +16,7 @@ var current_active_minigame
 
 var items_required_for_minigame: Array
 
-var can_start_minigame: bool
+var can_start_minigame: bool = false
 
 signal minigame_inventory_query(items_required: Array)
 
@@ -65,14 +65,45 @@ func handle_minigame_request(minigame_name_tag) -> void:
 		#add_child(current_active_minigame)
 
 
-func cleanup_minigame(win: bool) -> void:
-	# TODO: handle what happens if you win or lose the minigame. Might need
-	# to pass more arguments in such as loot etc. or,
+func cleanup_minigame() -> void:
+	# TODO: handle what happens if you win or lose the minigame.
 	# make a func for each minigame in order to respond to a unique signal from each on game end.
 	# use this func as a queue free only. 
-	if win:
-		pass
-	else:
-		pass
 	
 	current_active_minigame.queue_free()
+
+# These functions will be tied to signals emitted within the games/tasks in
+# question. They handle the outcomes of the task/game. may disable replay, may
+# add loot to inventory, change sprites, and more depending on the minigame/task 
+# in question.
+func fishing_minigame_end() -> void:
+	cleanup_minigame()
+	pass
+
+func leaves_task_end() -> void:
+	cleanup_minigame()
+	pass
+
+func cat_bowl_task_end() -> void:
+	cleanup_minigame()
+	pass
+
+func nest_minigame_end() -> void:
+	cleanup_minigame()
+	pass
+
+func wasps_minigame_end() -> void:
+	cleanup_minigame()
+	pass
+
+func spider_minigame_end() -> void:
+	cleanup_minigame()
+	pass
+
+func feed_moths_task_end() -> void:
+	cleanup_minigame()
+	pass
+
+func water_plants_task_end() -> void:
+	cleanup_minigame()
+	pass

@@ -16,4 +16,5 @@ func handle_inventory_change(item_name_tag: String) -> void:
 func send_inventory_query(items_required: Array) -> void:
 	inventory_check_result = inventory_system.check_for_items_in_inventory(items_required)
 	
-	minigame_manager.can_start_minigame = true
+	if inventory_check_result:
+		minigame_manager.can_start_minigame = true
