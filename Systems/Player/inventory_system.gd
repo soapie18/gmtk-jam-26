@@ -9,8 +9,8 @@ func _ready() -> void:
 	
 	player_ui.query_inventory_contents.connect(relay_inventory_contents_ui)
 
-func update_inventory(item_name_tag: String) -> void:
-	inventory_array.append(item_name_tag)
+func update_inventory(item_name: String) -> void:
+	inventory_array.append(item_name)
 	print(inventory_array)
 
 # A checker function for when a minigame or task requires items to be in the 

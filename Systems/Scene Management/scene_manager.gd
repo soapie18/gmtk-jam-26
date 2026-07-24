@@ -5,7 +5,7 @@ extends Node2D
 @onready var treetop_scene = preload("res://Garden/Scenes/Treetop/TreetopScene.tscn")
 @onready var pond_scene = preload("res://Garden/Scenes/Pond/PondScene.tscn")
 
-@onready var pause_menu = preload("res://Menus/pause_window.tscn")
+@onready var pause_menu = $"../PauseWindow"
 
 # Making main menu default value to allow it to be instantiated on launch.
 @onready var current_scene: PackedScene = main_menu
@@ -24,9 +24,7 @@ func _ready() -> void:
 	# what scene is being requested via a string.
 	current_scene_instance.scene_changed.connect(handle_scene_change)
 	
-	#current_scene_instance.item_collected.connect(handle_item_picked_up)
-	
-	###pause_menu.game_paused.connect(handle_pause)
+	pause_menu.handle_quit.connect(handle_quit)
 
 func handle_scene_change(target_scene_name: String) -> void:
 	var new_scene: PackedScene
@@ -66,5 +64,5 @@ func handle_minigame_request(minigame_name_tag: String):
 	# Picked up in minigame_manager.
 	minigame_requested_in_scene.emit(minigame_name_tag)
 
-func handle_pause() -> void:
+func handle_quit() -> void:
 	pass

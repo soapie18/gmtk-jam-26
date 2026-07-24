@@ -4,4 +4,11 @@
 
 [node name="PauseWindow" type="CanvasLayer"]
 script = ExtResource("1_5eto6")
-scene_name = "garden"
+
+[node name="Resume" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Quit" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0

@@ -21,6 +21,8 @@ var can_start_minigame: bool = false
 
 signal minigame_inventory_query(items_required: Array)
 
+signal add_loot_to_inventory(loot: String)
+
 func _ready() -> void:
 	scene_manager.minigame_requested_in_scene.connect(handle_minigame_request)
 
@@ -102,7 +104,7 @@ func fishing_minigame_end(success: bool) -> void:
 	
 	# Adding fish loot to inventory.
 	if success:
-		pass
+		add_loot_to_inventory.emit("fish")
 	else:
 		pass
 
