@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdnndtbw5x3pi"]
+
+[ext_resource type="Script" uid="uid://dgi073h1avs2p" path="res://Minigame Files/FishingGame/fishing_game.gd" id="1_6o7ao"]
+[ext_resource type="Resource" uid="uid://gfjn6ye116uu" path="res://Minigame Files/FishingGame/Fish.tres" id="2_1qyyv"]
+[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_826u1"]
+[ext_resource type="Resource" uid="uid://cbfp37hjkp7fd" path="res://Minigame Files/FishingGame/Rod.tres" id="3_n43jp"]
+[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="5_h87qr"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1qyyv"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 51.667
+initial_velocity_max = 142.84999
+gravity = Vector3(0, 98, 0)
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+
+[node name="FishingGame" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_6o7ao")
+fish = ExtResource("2_1qyyv")
+rod = ExtResource("3_n43jp")
+
+[node name="Control" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 198.0
+offset_top = 16.0
+offset_right = 198.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.68000007, 0.9200006)
+color = Color(0, 0.44705883, 0.91764706, 1)
+
+[node name="CatchBox" type="Control" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FishBar" type="ColorRect" parent="Control/CatchBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -57.0
+offset_top = -247.0
+offset_right = 63.0
+offset_bottom = 259.0
+color = Color(0.8925621, 0.39953732, 0.33449927, 1)
+
+[node name="TheGreen" type="ColorRect" parent="Control/CatchBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -40.0
+offset_top = 149.0
+offset_right = 41.0
+offset_bottom = 231.0
+color = Color(0.30588236, 1, 0.16470589, 1)
+
+[node name="FihhIcon" type="TextureRect" parent="Control/CatchBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -39.0
+offset_top = 14.0
+offset_right = 38.0
+offset_bottom = 102.0
+texture = ExtResource("2_826u1")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/CatchBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 74.0
+offset_top = -246.0
+offset_right = 119.0
+offset_bottom = 259.0
+fill_mode = 3
+
+[node name="FishCaughtLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.0
+offset_top = 14.0
+offset_right = 100.0
+offset_bottom = 51.0
+grow_horizontal = 2
+horizontal_alignment = 1
+
+[node name="ConfettiBurst" type="GPUParticles2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(559, 103)
+emitting = false
+amount = 138
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_1qyyv")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 29.0
+offset_right = 126.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme = ExtResource("5_h87qr")
+text = "press space when the screen shakes!"

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dr6shbyjqa1k3"]
+
+[ext_resource type="FontFile" uid="uid://dnwmhegqcp71g" path="res://Menus/Menus - Art/Chalkboard-Regular.ttf" id="1_rjcus"]
+
+[resource]
+default_font = ExtResource("1_rjcus")
+default_font_size = 18

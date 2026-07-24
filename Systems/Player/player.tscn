@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0lahqmcgellv"]
+[gd_scene load_steps=5 format=3 uid="uid://b0lahqmcgellv"]
 
 [ext_resource type="Script" uid="uid://ij1vukjiq3cs" path="res://Systems/Player/player_script.gd" id="1_pc2b8"]
 [ext_resource type="PackedScene" uid="uid://c21lhaeoxjq5p" path="res://Systems/Player/inventory_system.tscn" id="3_mqks5"]
+[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="4_pc2b8"]
 [ext_resource type="Script" uid="uid://j7ntix0ijf75" path="res://Systems/Player/player_ui.gd" id="4_wc1dy"]
 
 [node name="Player" type="Node2D"]
@@ -24,6 +25,7 @@ text = "inventory button"
 [node name="Label" type="Label" parent="PlayerUI"]
 offset_right = 40.0
 offset_bottom = 23.0
+theme = ExtResource("4_pc2b8")
 
 [node name="TextCooldown" type="Timer" parent="PlayerUI"]
 
