@@ -23,6 +23,7 @@ rod = ExtResource("3_n43jp")
 
 [node name="Control" type="Control" parent="."]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,17 +36,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 198.0
-offset_top = 16.0
-offset_right = 198.0
-offset_bottom = 16.0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 562.1763
+offset_bottom = 68.65167
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.68000007, 0.9200006)
 color = Color(0, 0.44705883, 0.91764706, 1)
 
+[node name="ExitButton" type="Button" parent="Control"]
+z_index = 2
+layout_mode = 0
+offset_left = 77.0
+offset_top = 44.0
+offset_right = 120.0
+offset_bottom = 88.0
+text = "exit"
+
 [node name="CatchBox" type="Control" parent="Control"]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,10 +135,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -123.0
-offset_top = 29.0
-offset_right = 126.0
-offset_bottom = 58.0
+offset_left = -173.0
+offset_top = 16.0
+offset_right = 170.0
+offset_bottom = 54.0
 grow_horizontal = 2
 theme = ExtResource("5_h87qr")
-text = "press space when the screen shakes!"
+text = "press space when the screen shakes to start!"
+
+[connection signal="pressed" from="Control/ExitButton" to="." method="_on_exit_button_pressed"]

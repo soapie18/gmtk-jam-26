@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://gfjn6ye116uu"]
 
-[ext_resource type="Script" uid="uid://b24g03j8sbqwi" path="res://Fish.gd" id="1_u4gn8"]
+[ext_resource type="Script" uid="uid://b24g03j8sbqwi" path="res://Minigame Files/FishingGame/Fish.gd" id="1_u4gn8"]
 
 [resource]
 script = ExtResource("1_u4gn8")
-difficulty = 1.0
+difficulty = 0.46
 pattern = 2
 metadata/_custom_type_script = "uid://b24g03j8sbqwi"

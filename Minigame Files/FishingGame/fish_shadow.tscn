@@ -1,24 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnjugcysakcmf"]
+[gd_scene load_steps=2 format=3 uid="uid://dnjugcysakcmf"]
 
 [ext_resource type="Script" uid="uid://d1pulgk23hn8h" path="res://Minigame Files/FishingGame/fish_shadow.gd" id="1_eo1bp"]
-[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="1_urs1e"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eo1bp"]
-radius = 67.08434
-height = 134.16869
 
 [node name="FishShadow" type="Node2D"]
 modulate = Color(0, 0, 0, 1)
+z_index = 1
 script = ExtResource("1_eo1bp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.7500012, -1.25)
-scale = Vector2(0.32421872, 0.33203125)
-texture = ExtResource("1_urs1e")
+[node name="FihButton" type="Button" parent="."]
+offset_right = 76.0
+offset_bottom = 26.0
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-shape = SubResource("CapsuleShape2D_eo1bp")
-
-[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="FihButton" to="." method="_on_start_game_trigger_pressed"]

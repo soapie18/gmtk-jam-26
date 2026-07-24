@@ -1,10 +1,14 @@
 extends Node2D
 
-var fishing_game_window
+@onready var fih_button = $FihButton
 
-signal start_fishing
+enum fish_type {
+	#put them here
+}
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			start_fishing.emit()
+signal start_fishing#fish type as param
+
+func _on_start_game_trigger_pressed() -> void:
+	print("shadow clicked")
+	#feed this emit some fish type param
+	start_fishing.emit(fish_type)

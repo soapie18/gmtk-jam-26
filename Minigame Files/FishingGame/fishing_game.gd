@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal fishing_finished(success: bool)
+signal finished_task(success: bool)
  
 @export var fish: Fish
 @export var rod: Rod
@@ -13,6 +13,8 @@ signal fishing_finished(success: bool)
 @onready var progress: ProgressBar       = %ProgressBar
 @onready var label_name: Label           = %FishCaughtLabel
 @onready var burst: GPUParticles2D       = %ConfettiBurst
+
+@onready var exit_button = $Control/ExitButton
 
 const BASE_BAR_HEIGHT := 20.0
 const BASE_HOOK_WINDOW := 0.6
@@ -137,7 +139,7 @@ func _fail(_why: String):
 	_shake(5.0, 0.20)
 	
 	await get_tree().create_timer(0.2).timeout
-	fishing_finished.emit(false)
+	finished_task.emit(false)
 
 func _success():
 	_state = STATE.END
@@ -149,7 +151,7 @@ func _success():
 	_punch_ui(root_ui, 1.12, 0.18)
 	
 	await get_tree().create_timer(0.25).timeout
-	fishing_finished.emit(true)
+	finished_task.emit(true)
 
 func _on_hook():
 	_state = STATE.PLAY
@@ -238,3 +240,7 @@ func _time_freeze(seconds: float):
 	Engine.time_scale = 0.0
 	await get_tree().create_timer(seconds, true, true, true).timeout
 	Engine.time_scale = 1.0
+
+
+func _on_exit_button_pressed() -> void:
+	finished_task.emit(false)
