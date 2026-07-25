@@ -21,3 +21,5 @@ process_priority = 1
 [node name="MinigameManager" parent="." instance=ExtResource("5_xp8r7")]
 
 [node name="PauseWindow" parent="." instance=ExtResource("6_utk5h")]
+process_mode = 3
+process_priority = 1

@@ -1,4 +1,8 @@
 extends Node2D
 
-var ambient_music
+# Minigame music.
+var watering_flowers_bg
+var fishing_bg
+
+
 var menu_music

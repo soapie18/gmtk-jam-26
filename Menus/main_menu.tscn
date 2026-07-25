@@ -42,5 +42,17 @@ grow_vertical = 2
 
 [node name="ChangeSceneButton" parent="CanvasLayer/VBoxContainer" instance=ExtResource("4_11gta")]
 layout_mode = 2
-text = "play"
+text = "
+Play
+
+"
 target_name = "grass"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "
+Quit
+
+"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
