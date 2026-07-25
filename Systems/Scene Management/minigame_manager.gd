@@ -6,10 +6,8 @@ extends Node2D
 @onready var pond_minigame_file = preload("res://Minigame Files/FishingGame/fishing_pond.tscn")
 @onready var nest_minigame_file
 @onready var leaves_minigame_file
-@onready var wasps_minigame_file
 @onready var spider_minigame_file
 @onready var branch_minigame_file
-@onready var bowl_minigame_file
 
 var selected_minigame: PackedScene
 var current_active_minigame
@@ -23,10 +21,14 @@ signal minigame_inventory_query(items_required: Array)
 
 signal add_loot_to_inventory(loot: String)
 
+signal audio_change_request(audio_index: int)
+
 func _ready() -> void:
 	scene_manager.minigame_requested_in_scene.connect(handle_minigame_request)
 
 func handle_minigame_request(minigame_name_tag) -> void:
+	var chosen_audio_index
+	
 	# Resetting the list from last time.
 	items_required_for_minigame.resize(0)
 	# Checking which minigame was requested, adding to the list to be
@@ -36,6 +38,8 @@ func handle_minigame_request(minigame_name_tag) -> void:
 			selected_minigame = pond_minigame_file
 			
 			cleanup_function = Callable(fishing_minigame_end)
+			
+			chosen_audio_index = 2
 		"nest":
 			selected_minigame = nest_minigame_file
 			
@@ -43,20 +47,22 @@ func handle_minigame_request(minigame_name_tag) -> void:
 			items_required_for_minigame.append("twig")
 			
 			cleanup_function = Callable(nest_minigame_end)
+			
+			chosen_audio_index = 5
 		"leaves":
 			selected_minigame = leaves_minigame_file
 			
 			items_required_for_minigame.append("monarch caterpillar")
 			
 			cleanup_function = Callable(leaves_task_end)
-		"wasps":
-			selected_minigame = wasps_minigame_file
 			
-			cleanup_function = Callable(wasps_minigame_end)
+			chosen_audio_index = 4
 		"spider":
 			selected_minigame = spider_minigame_file
 			
 			cleanup_function = Callable(spider_minigame_end)
+			
+			chosen_audio_index = 7
 		"branch":
 			selected_minigame = branch_minigame_file
 			
@@ -64,12 +70,8 @@ func handle_minigame_request(minigame_name_tag) -> void:
 			items_required_for_minigame.append("apple")
 			
 			cleanup_function = Callable(feed_moths_task_end)
-		"cat bowl":
-			selected_minigame = bowl_minigame_file
 			
-			items_required_for_minigame.append("fish")
-			
-			cleanup_function = Callable(cat_bowl_task_end)
+			chosen_audio_index = 4
 		_:
 			return
 	
@@ -80,6 +82,8 @@ func handle_minigame_request(minigame_name_tag) -> void:
 		print("ready to start this minigame!")
 		current_active_minigame = selected_minigame.instantiate()
 		add_child(current_active_minigame)
+		
+		audio_change_request.emit(chosen_audio_index)
 		
 		# Every minigame/task will have a signal called this, but will be
 		# connected to a unique function to handle its cleanup, as found
@@ -102,6 +106,7 @@ func fishing_minigame_end(success: bool) -> void:
 	print("fishing game terminated")
 	cleanup_minigame()
 	
+	audio_change_request.emit(1)
 	# Adding fish loot to inventory.
 	if success:
 		add_loot_to_inventory.emit("fish")
@@ -110,25 +115,23 @@ func fishing_minigame_end(success: bool) -> void:
 
 # TODO: sophie's task
 func leaves_task_end() -> void:
+	audio_change_request.emit(1)
 	cleanup_minigame()
 
 # TODO: sophie's task
-func cat_bowl_task_end() -> void:
+func branch_task_end() -> void:
+	audio_change_request.emit(1)
 	cleanup_minigame()
 
 func nest_minigame_end() -> void:
-	cleanup_minigame()
-
-func wasps_minigame_end() -> void:
+	audio_change_request.emit(1)
 	cleanup_minigame()
 
 func spider_minigame_end() -> void:
+	audio_change_request.emit(1)
 	cleanup_minigame()
 
 # TODO: sophie's task
 func feed_moths_task_end() -> void:
-	cleanup_minigame()
-
-# TODO: sophie's task
-func water_plants_task_end() -> void:
+	audio_change_request.emit(1)
 	cleanup_minigame()

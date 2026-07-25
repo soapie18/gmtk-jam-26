@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://k4kfympdqynj"]
+
+[ext_resource type="Script" uid="uid://g6y06dnm7ly0" path="res://Interactables/Minigames and Tasks/flowers.gd" id="1_n4u55"]
+[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_1dmws"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dmws"]
+
+[node name="Flowers" type="Node2D"]
+script = ExtResource("1_n4u55")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.11764706, 0.5137255, 1)
+position = Vector2(23, 26.25)
+scale = Vector2(0.359375, 0.35546875)
+texture = ExtResource("2_1dmws")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CapsuleShape2D_1dmws")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://byx605tuw0rf5"]
+[gd_scene load_steps=3 format=3 uid="uid://byx605tuw0rf5"]
 
 [ext_resource type="Script" uid="uid://ip2of2mxtmle" path="res://Systems/Audio/audio_manager.gd" id="1_jisk1"]
+[ext_resource type="AudioStream" uid="uid://244qtqb0r2ta" path="res://Garden/Garden - Audio/Panorama.wav" id="2_qta38"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_jisk1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+process_priority = 1
+stream = ExtResource("2_qta38")
+volume_db = 0.5

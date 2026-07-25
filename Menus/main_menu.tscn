@@ -1,14 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://dopgt5elscy3k"]
 
-[ext_resource type="PackedScene" uid="uid://b58jml1i3xy7e" path="res://Menus/Menus - Audio/menu_music.tscn" id="1_jf8mj"]
 [ext_resource type="Script" uid="uid://hd443818uhcs" path="res://Menus/main_menu.gd" id="1_p3jrs"]
+[ext_resource type="Texture2D" uid="uid://crn1h0gf1w47i" path="res://Garden/Garden - Art/BG_grass.jpg" id="2_11gta"]
 [ext_resource type="Theme" uid="uid://cx00si32fjbga" path="res://Menus/Menus - Art/title_theme.tres" id="3_at0u2"]
 [ext_resource type="PackedScene" uid="uid://b8gleo3k6i3fb" path="res://UI/ChangeSceneButton.tscn" id="4_11gta"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_p3jrs")
 
-[node name="MenuMusic" parent="." instance=ExtResource("1_jf8mj")]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 1189.0
+offset_bottom = 666.0
+texture = ExtResource("2_11gta")
+stretch_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -54,5 +60,9 @@ text = "
 Quit
 
 "
+
+[node name="ButerflySpriteDecoration" type="Sprite2D" parent="."]
+
+[node name="MothSpriteDecoration" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

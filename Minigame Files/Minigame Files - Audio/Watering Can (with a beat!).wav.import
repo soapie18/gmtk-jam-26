@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://le0n6t08wkkb"
+path="res://.godot/imported/Watering Can (with a beat!).wav-cf2965b85a23f8d7671ae9e362bf33ab.sample"
+
+[deps]
+
+source_file="res://Minigame Files/Minigame Files - Audio/Watering Can (with a beat!).wav"
+dest_files=["res://.godot/imported/Watering Can (with a beat!).wav-cf2965b85a23f8d7671ae9e362bf33ab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

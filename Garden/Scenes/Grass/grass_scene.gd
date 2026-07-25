@@ -11,15 +11,19 @@ extends Node2D
 @onready var twig_pickup = $TwigPickup
 @onready var monarch_caterpillars = $MonarchCaterpillarPickup
 
+# Flowers in this scene.
+@onready var flowers = $Flowers
+
 # Minigames found in this scene.
 @onready var leaves = $Leaves
-@onready var cat_bowl = $CatBowl
 
 signal scene_changed(target_scene_name: String)
 
 signal item_picked_up_in_scene(item_name_tag: String, scene_name: String)
 
 signal minigame_requested_in_scene(minigame_name_tag: String)
+
+signal flowers_watered(identifier: String)
 
 func _ready() -> void:
 	# Connecting to signals to be the middleman between buttons pressed and 
@@ -36,7 +40,8 @@ func _ready() -> void:
 	# Connecting to signal emitted by minigame items to say a minigame has
 	# been requested. Minigame manager and inventory will also be involved.
 	leaves.minigame_requested.connect(handle_minigame_request)
-	cat_bowl.minigame_requested.connect(handle_minigame_request)
+	
+	flowers.flowers_watered.connect(handle_flowers_watered)
 
 
 func handle_minigame_request(minigame_name_tag: String):
@@ -52,3 +57,6 @@ func handle_scene_request(target_scene_name) -> void:
 func respond_to_item_pickup(item_name_tag: String):
 	# Picked up in scene_manager.
 	item_picked_up_in_scene.emit(item_name_tag, scene_name)
+
+func handle_flowers_watered(identifier: String) -> void:
+	flowers_watered.emit(identifier)

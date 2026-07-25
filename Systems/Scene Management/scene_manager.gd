@@ -15,7 +15,11 @@ var pond_scene_instance
 
 signal scene_inventory_changed(item_name_tag: String)
 
+signal audio_change_request(audio_index: int)
+
 signal minigame_requested_in_scene(minigame_name_tag: String)
+
+signal flowers_watered(identifier: String)
 
 func _ready() -> void:
 	# Instantiating all 4 scenes to be added and removed from tree freely.
@@ -37,6 +41,8 @@ func _ready() -> void:
 	main_menu_instance.quit_game.connect(handle_quit)
 
 func handle_scene_change(target_scene_name: String) -> void:
+	audio_change_request.emit(1)
+	
 	var new_scene_instance
 	
 	# Seeing which scene is requested from signal sent. Assigning it to
@@ -60,10 +66,16 @@ func handle_scene_change(target_scene_name: String) -> void:
 	new_scene_instance.item_picked_up_in_scene.connect(handle_item_picked_up)
 	new_scene_instance.minigame_requested_in_scene.connect(handle_minigame_request)
 	
+	if new_scene_instance == grass_scene_instance || new_scene_instance == pond_scene_instance:
+		new_scene_instance.flowers_watered.connect(handle_flowers_watered)
+	
 	# Cleanup of previous scene.
 	current_scene_instance.scene_changed.disconnect(handle_scene_change)
 	current_scene_instance.item_picked_up_in_scene.disconnect(handle_item_picked_up)
 	current_scene_instance.minigame_requested_in_scene.disconnect(handle_minigame_request)
+	
+	if current_scene_instance == grass_scene_instance || current_scene_instance == pond_scene_instance:
+		current_scene_instance.flowers_watered.disconnect(handle_flowers_watered)
 	
 	remove_child(current_scene_instance)
 	current_scene_instance = new_scene_instance
@@ -87,3 +99,6 @@ func handle_quit() -> void:
 	# Quitting game safely.
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
+
+func handle_flowers_watered(identifier: String) -> void:
+	flowers_watered.emit(identifier)

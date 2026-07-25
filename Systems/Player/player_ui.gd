@@ -11,10 +11,14 @@ var text_cooled_down: bool = true
 
 signal query_inventory_contents
 
+signal day_ended
+
 func _ready() -> void:
 	default_text = text.text
 	text_timer.timeout.connect(reset_text)
 
+func _on_end_day_pressed() -> void:
+	day_ended.emit()
 
 func _on_inventory_view_pressed() -> void:
 	if text_cooled_down:
@@ -56,4 +60,3 @@ func display_inventory_contents() -> void:
 func reset_text() -> void:
 	text.text = default_text
 	text_cooled_down = true
-	

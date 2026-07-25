@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1sjbvfs26v40"
+path="res://.godot/imported/spiderclawmachine.mp3-e9fdd6b8fc7176a92d7f6d4ad13c4dd3.mp3str"
+
+[deps]
+
+source_file="res://Minigame Files/Minigame Files - Audio/spiderclawmachine.mp3"
+dest_files=["res://.godot/imported/spiderclawmachine.mp3-e9fdd6b8fc7176a92d7f6d4ad13c4dd3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://qtt7x87bje2k"]
-
-[ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_ydicy"]
-
-[node name="Wasps" type="Node2D"]
-script = ExtResource("1_ydicy")
-minigame_tag = "wasps"

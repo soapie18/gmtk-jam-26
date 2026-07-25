@@ -11,7 +11,6 @@ extends Node2D
 # Minigames found in this scene.
 @onready var nest = $Nest
 @onready var spider = $Spider
-@onready var wasps = $Wasps
 
 signal scene_changed(target_scene_name: String)
 
@@ -31,7 +30,6 @@ func _ready() -> void:
 	# Connecting to signal emitted by minigame items to say a minigame has
 	# been requested. Minigame manager and inventory will also be involved.
 	nest.minigame_requested.connect(handle_minigame_request)
-	wasps.minigame_requested.connect(handle_minigame_request)
 	spider.minigame_requested.connect(handle_minigame_request)
 
 func handle_scene_request(target_scene_name) -> void:
