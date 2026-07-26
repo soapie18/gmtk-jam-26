@@ -12,6 +12,8 @@ extends Node2D
 @onready var nest = $Nest
 @onready var spider = $Spider
 
+@onready var fixed_nest_texture = load("res://Interactables/Minigames and Tasks/Minigame Items - Art/Pidgeon_Fixed.png")
+
 signal scene_changed(target_scene_name: String)
 
 signal item_picked_up_in_scene(item_name_tag: String, scene_name: String)
@@ -42,3 +44,6 @@ func handle_minigame_request(minigame_name_tag: String):
 func respond_to_item_pickup(item_name_tag: String):
 	# Picked up in scene_manager.
 	item_picked_up_in_scene.emit(item_name_tag, scene_name)
+
+func change_nest_sprite() -> void:
+	nest.sprite.texture = fixed_nest_texture

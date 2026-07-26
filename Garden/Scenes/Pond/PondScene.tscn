@@ -39,15 +39,15 @@ target_name = "grass"
 metadata/_custom_type_script = "uid://cph0g1c6n06yh"
 
 [node name="Pond" parent="." instance=ExtResource("4_klcuq")]
-position = Vector2(534, 406)
+position = Vector2(543, 406)
 
 [node name="Branch" parent="." instance=ExtResource("5_q1sli")]
-position = Vector2(176, 437)
+position = Vector2(185, 437)
 
 [node name="MothCaterpillarPickup" parent="." instance=ExtResource("6_m3opp")]
-position = Vector2(327, 581)
+position = Vector2(685, 571)
 
 [node name="Flowers" parent="." instance=ExtResource("7_m3opp")]
-position = Vector2(952, 568)
+position = Vector2(860, 468)
 
 [connection signal="pressed" from="Canvas/GrassButton" to="Canvas/GrassButton" method="_on_pressed"]

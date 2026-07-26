@@ -1,24 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://wlvvbfpmbt57"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_k4y58"]
-[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_qap32"]
+[ext_resource type="Texture2D" uid="uid://fna3e1tfgexg" path="res://Interactables/Pickups/Pickups - Art/Feather.png" id="2_qap32"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fj8k"]
-radius = 69.38948
-height = 138.77896
+radius = 100.963455
+height = 660.9909
 
 [node name="FeatherPickup" type="Node2D"]
 script = ExtResource("1_k4y58")
 name_tag = "feather"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-16.5, -11.000002)
-scale = Vector2(0.7421875, 0.828125)
+position = Vector2(-14.293959, -24.949015)
+scale = Vector2(0.14814532, 0.16529898)
 texture = ExtResource("2_qap32")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(89.73593, -24.507019)
+rotation = 0.4482608
 shape = SubResource("CapsuleShape2D_7fj8k")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

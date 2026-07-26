@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://v8qvdfh2hwib"]
+[gd_scene load_steps=21 format=3 uid="uid://v8qvdfh2hwib"]
 
+[ext_resource type="Script" uid="uid://dpsdxovqrl5yy" path="res://Minigame Files/NestRepairGame/pigeon_nest_repair.gd" id="1_6eyyy"]
 [ext_resource type="Script" uid="uid://cljl4q5jchir4" path="res://Minigame Files/NestRepairGame/PidgeonNest.gd" id="1_73jn4"]
 [ext_resource type="Texture2D" uid="uid://b1gwfycbybkxb" path="res://Minigame Files/NestRepairGame/Tree_BG.png" id="1_usuiw"]
 [ext_resource type="Script" uid="uid://dwbrlxjvf8478" path="res://Minigame Files/NestRepairGame/quick_time_event.gd" id="3_18ebn"]
@@ -97,6 +98,7 @@ _data = {
 }
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_6eyyy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100

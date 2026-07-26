@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://p3dgijjle0k"]
+[gd_scene load_steps=4 format=3 uid="uid://p3dgijjle0k"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_u2l00"]
+[ext_resource type="Texture2D" uid="uid://be3hx157hposp" path="res://Interactables/Pickups/Pickups - Art/Stick_04.png" id="2_4tg82"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2l00"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4jy1"]
+size = Vector2(932.2274, 115.04385)
 
 [node name="TwigPickup" type="Node2D"]
 script = ExtResource("1_u2l00")
 name_tag = "twig"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.18450433, 0.18450433)
+texture = ExtResource("2_4tg82")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-shape = SubResource("CapsuleShape2D_u2l00")
+position = Vector2(32.243446, 11.117665)
+rotation = -0.7884591
+shape = SubResource("RectangleShape2D_j4jy1")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]

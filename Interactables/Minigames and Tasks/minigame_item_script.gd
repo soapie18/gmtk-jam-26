@@ -2,6 +2,8 @@ extends Node2D
 
 @export var minigame_tag: String
 
+@onready var sprite = $Sprite2D
+
 signal minigame_requested(mingame_name_tag: String)
 
 func _ready() -> void:

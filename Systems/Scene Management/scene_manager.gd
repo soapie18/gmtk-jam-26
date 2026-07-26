@@ -102,3 +102,6 @@ func handle_quit() -> void:
 
 func handle_flowers_watered(identifier: String) -> void:
 	flowers_watered.emit(identifier)
+
+func change_nest_sprite() -> void:
+	treetop_scene_instance.change_nest_sprite()

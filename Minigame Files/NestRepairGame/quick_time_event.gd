@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	
 	pointer.position.x += direction
 	
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("fix nest"):
 		if pointer.position.x >= safezone_pos_1.position.x and pointer.position.x <= safezone_pos_2.position.x:
 			PidgeonNest.heal()
 			if PidgeonNest.dmg <= 0.0:

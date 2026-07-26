@@ -14,6 +14,8 @@ var day_index: int
 var flowers_1_watered: bool
 var flowers_2_watered: bool
 
+var nest_fixed: bool
+
 # Day two conditions to progress to Day 3.
 var caterpillars_fed: bool
 var larvae_fed: bool

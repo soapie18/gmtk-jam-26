@@ -1,10 +1,11 @@
 extends Node2D
 
 @onready var scene_manager = $"../SceneManager"
+@onready var day_manager = $"../DayManager"
 
 # For when a minigame needs to be instantiated on request.
 @onready var pond_minigame_file = preload("res://Minigame Files/FishingGame/fishing_pond.tscn")
-@onready var nest_minigame_file
+@onready var nest_minigame_file = preload("res://Minigame Files/NestRepairGame/PigeonNestRepair.tscn")
 @onready var leaves_minigame_file
 @onready var spider_minigame_file
 @onready var branch_minigame_file
@@ -18,9 +19,7 @@ var items_required_for_minigame: Array
 var can_start_minigame: bool = false
 
 signal minigame_inventory_query(items_required: Array)
-
 signal add_loot_to_inventory(loot: String)
-
 signal audio_change_request(audio_index: int)
 
 func _ready() -> void:
@@ -123,8 +122,14 @@ func branch_task_end() -> void:
 	audio_change_request.emit(1)
 	cleanup_minigame()
 
-func nest_minigame_end() -> void:
+func nest_minigame_end(success: bool) -> void:
 	audio_change_request.emit(1)
+	
+	if success:
+		scene_manager.change_nest_sprite()
+		
+		day_manager.nest_fixed = true
+
 	cleanup_minigame()
 
 func spider_minigame_end() -> void:

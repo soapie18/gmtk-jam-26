@@ -51,19 +51,21 @@ target_name = "pond"
 metadata/_custom_type_script = "uid://cph0g1c6n06yh"
 
 [node name="FeatherPickup" parent="." instance=ExtResource("4_hw70u")]
-position = Vector2(283, 561)
+position = Vector2(204.00003, 617.00006)
+rotation = 0.8334291
 
 [node name="MonarchCaterpillarPickup" parent="." instance=ExtResource("5_2rjrf")]
-position = Vector2(671, 546)
+position = Vector2(348, 455)
 
 [node name="TwigPickup" parent="." instance=ExtResource("6_0eh24")]
-position = Vector2(1013, 552)
+position = Vector2(1046, 569)
+rotation = 0.5498532
 
 [node name="Leaves" parent="." instance=ExtResource("8_wqhcx")]
-position = Vector2(423, 383)
+position = Vector2(655, 304)
 
 [node name="Flowers" parent="." instance=ExtResource("8_nqyqc")]
-position = Vector2(815, 493)
+position = Vector2(844, 449)
 
 [connection signal="pressed" from="CanvasLayer/TreetopButton" to="CanvasLayer/TreetopButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PondButton" to="CanvasLayer/PondButton" method="_on_pressed"]

@@ -1,18 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://csd0rvqiif5a4"]
+[gd_scene load_steps=4 format=3 uid="uid://csd0rvqiif5a4"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_t0lpa"]
+[ext_resource type="Texture2D" uid="uid://bdhbrjl0us12a" path="res://Interactables/Pickups/Pickups - Art/Larvae.png" id="2_q13rh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q13rh"]
+radius = 140.69284
+height = 681.34454
 
 [node name="MothCaterpillarPickup" type="Node2D"]
 script = ExtResource("1_t0lpa")
 name_tag = "moth caterpillar"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.999996, -7.0000076)
+scale = Vector2(0.09950757, 0.09950757)
+texture = ExtResource("2_q13rh")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-10.049448, 60.297)
+rotation = 1.48344
+scale = Vector2(1.1754665, 1.652038)
+shape = SubResource("CapsuleShape2D_q13rh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(165.99998, 25.999996)
+scale = Vector2(0.09950757, 0.09950757)
+texture = ExtResource("2_q13rh")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
+position = Vector2(40.19814, 60.296963)
+rotation = -1.5411066
+scale = Vector2(1.1754665, 1.652038)
 shape = SubResource("CapsuleShape2D_q13rh")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

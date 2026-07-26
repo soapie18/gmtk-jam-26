@@ -8,7 +8,7 @@ extends Node2D
 # Minigame music.
 var watering_flowers_bg: AudioStream = load("res://Minigame Files/Minigame Files - Audio/Watering Can (with a beat!).wav")
 var fishing_bg: AudioStream = load("res://Minigame Files/Minigame Files - Audio/fihost.mp3")
-var caterpillars_bg: AudioStream 
+var caterpillars_bg: AudioStream = load("res://Minigame Files/Minigame Files - Audio/Snoozy Bug v2.wav")
 var nest_bg: AudioStream = load("res://Minigame Files/Minigame Files - Audio/N.E.S.T..wav")
 var spider_bg: AudioStream = load("res://Minigame Files/Minigame Files - Audio/spiderclawmachine.mp3")
 
