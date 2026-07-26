@@ -123,4 +123,4 @@ func change_nest_sprite(sprite_identifier: String) -> void:
 
 func spawn_butterflies() -> void:
 	grass_scene_instance.flowers.spawn_butterflies()
-	pond_scene_instance.flower.spawn_butterflies()
+	pond_scene_instance.flowers.spawn_butterflies()

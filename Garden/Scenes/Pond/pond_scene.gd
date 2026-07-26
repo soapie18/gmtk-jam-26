@@ -12,7 +12,7 @@ extends Node2D
 @onready var pond = $Pond
 @onready var branch = $Branch
 
-@onready var flower = $Flowers
+@onready var flowers = $Flowers
 
 signal scene_changed(target_scene_name: String)
 
@@ -36,7 +36,7 @@ func _ready() -> void:
 	pond.minigame_requested.connect(handle_minigame_request)
 	branch.minigame_requested.connect(handle_minigame_request)
 	
-	flower.flowers_watered.connect(handle_flowers_watered)
+	flowers.flowers_watered.connect(handle_flowers_watered)
 
 func handle_scene_request(target_scene_name) -> void:
 	# Picked up in scene_manager.
