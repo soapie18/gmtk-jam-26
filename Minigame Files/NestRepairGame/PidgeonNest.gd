@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal finished_task(success: bool)
+
 @export var dmg = 100
 @onready var PidgeonNest: CharacterBody2D   = %PidgeonNest
 @onready var ConfettiBurst: GPUParticles2D   = %ConfettiBurst
@@ -27,3 +29,4 @@ func success():
 		WinLabel.show()
 		Skillcheck.hide()  
 		win_sound.play()
+		finished_task.emit(true)

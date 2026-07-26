@@ -14,7 +14,8 @@ signal finished_task(success: bool)
 @onready var label_Win: Label           = %FishCaughtLabel
 @onready var burst: GPUParticles2D       = %ConfettiBurst
 @onready var label_play: Label           = %howtoplayLabel
-
+@onready var sfx_win: AudioStreamPlayer = %SFX_Win
+@onready var sfx_fail: AudioStreamPlayer = %SFX_Fail
 @onready var exit_button = $Control/ExitButton
 
 const BASE_BAR_HEIGHT := 20.0
@@ -136,6 +137,7 @@ func _prompt_hook():
 func _fail(_why: String):
 	_state = STATE.END
 	print("fail : " + _why)
+	sfx_fail.play()
 	
 	_shake(5.0, 0.20)
 	
@@ -148,12 +150,14 @@ func _success():
 	burst.emitting = true
 	label_Win.show()
 	label_play.hide()
+	sfx_win.play()
 	
 	_shake(10.0, 0.25)
 	_punch_ui(root_ui, 1.12, 0.18)
 	
 	await get_tree().create_timer(0.25).timeout
 	finished_task.emit(true)
+	
 
 func _on_hook():
 	_state = STATE.PLAY

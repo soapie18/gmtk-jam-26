@@ -4,6 +4,5 @@
 
 [resource]
 script = ExtResource("1_u4gn8")
-difficulty = 0.22
-pattern = 2
+difficulty = 0.42
 metadata/_custom_type_script = "uid://b24g03j8sbqwi"
