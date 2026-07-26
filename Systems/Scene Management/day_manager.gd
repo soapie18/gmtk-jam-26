@@ -45,50 +45,26 @@ func update_flowers_watered(identifier: String) -> void:
 			print(flowers_2_watered)
 
 
-func trigger_day_end_anim_day1(canvas_instance) -> void:
-	canvas_instance.label.text = "Day 1"
-	
-	var screen_tween = create_tween()
-	screen_tween.tween_property(canvas_instance.color_rect, "modulate", Color.WHITE, 5)
-	
-	canvas_instance.label.text = "Day 2" 
-	
-	var screen_fade = create_tween()
-	screen_fade.tween_property(canvas_instance.color_rect, "modulate", Color(100, 100, 100, 0), 5)
-	
-	canvas_instance.color_rect.Color(0, 0, 0, 1)
-
-
-
-func trigger_day_end_anim_day2(canvas_instance) -> void:
-	canvas_instance.label.text = "Day 2"
-	
-	var screen_tween = create_tween()
-	screen_tween.tween_property(canvas_instance.color_rect, "modulate", Color.WHITE, 5)
-	
-	canvas_instance.label.text = "Day 3"
-	
-	var screen_fade = create_tween()
-	screen_fade.tween_property(canvas_instance.color_rect, "modulate", Color(100, 100, 100, 0), 5)
-	
-	canvas_instance.color_rect.Color(0, 0, 0, 1)
-
-
-
 func handle_day_ended() -> void:
 	
 	match day_index:
 		1:
 			if !flowers_1_watered || !flowers_2_watered:
-				trigger_gameover_day1()
+				add_child(day_end_screen_instance)
+				day_end_screen_instance.timer.start(3)
+				#on timeout display gamoever screen and stop timer
 			else:
-				trigger_day_end_anim_day1(day_end_screen_instance)
+				add_child(day_end_screen_instance)
+				day_end_screen_instance.timer.start(3)
+				#remove child on timeout and stop timer
 				setup_day2()
 		2:
 			if !caterpillars_fed || !larvae_fed:
 				trigger_gameover_day2()
 			else:
-				trigger_day_end_anim_day2(day_end_screen_instance)
+				add_child(day_end_screen_instance)
+				day_end_screen_instance.timer.start(3)
+				#remove child on timeout 
 				setup_day3()
 		3:
 			roll_credits()
@@ -102,13 +78,15 @@ func trigger_gameover_day1() -> void:
 	var gameover_screen_instance = gameover_screen1.instantiate()
 	add_child(gameover_screen_instance)
 	
-	#QUIT GAME
+	gameover_screen_instance.timer.start(8)
+	
+	#QUIT GAME on timeout
 
 func trigger_gameover_day2() -> void:
 	var gameover_screen_instance = gameover_screen2.instantiate()
 	add_child(gameover_screen_instance)
 	
-	#QUIT GAME
+	#QUIT GAME on timeout
 
 func setup_day2() -> void:
 	pass

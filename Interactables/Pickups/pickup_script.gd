@@ -3,6 +3,7 @@ extends Node2D
 @export var name_tag: String
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite_2: Sprite2D = $Sprite2D2 
 
 var default_sprite_scale: Vector2
 var sprite_scale_multiplier: float = 1.1
@@ -24,7 +25,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _on_area_2d_mouse_entered() -> void:
 	sprite.scale *= sprite_scale_multiplier
+	sprite_2.scale *= sprite_scale_multiplier
 
 
 func _on_area_2d_mouse_exited() -> void:
 	sprite.scale = default_sprite_scale
+	sprite_2.scale = default_sprite_scale

@@ -23,6 +23,8 @@ position = Vector2(89.73593, -24.507019)
 rotation = 0.4482608
 shape = SubResource("CapsuleShape2D_7fj8k")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

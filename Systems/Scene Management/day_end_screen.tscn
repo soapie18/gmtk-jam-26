@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bre6i0fs1xwsv"]
+[gd_scene load_steps=3 format=3 uid="uid://bre6i0fs1xwsv"]
+
+[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="1_ike7i"]
+[ext_resource type="Texture2D" uid="uid://dyi8gkdwd4mkr" path="res://Interactables/Pickups/Pickups - Art/Caterpillar.png" id="2_0qd3t"]
 
 [node name="DayEndScreen" type="CanvasLayer"]
 
@@ -22,3 +25,14 @@ offset_right = 97.0
 offset_bottom = 133.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ike7i")
+text = "Night has fallen on day one.."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(587, 302.00003)
+rotation = 0.103614986
+scale = Vector2(0.24363633, 0.24363633)
+texture = ExtResource("2_0qd3t")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
