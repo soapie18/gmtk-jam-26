@@ -15,11 +15,13 @@ texture = ExtResource("2_8ibki")
 expand_mode = 1
 
 [node name="FishShadow" parent="." instance=ExtResource("2_c1md4")]
-position = Vector2(705, 121.00001)
+position = Vector2(599, 145)
 rotation = 0.13631602
 
 [node name="FishShadow2" parent="." instance=ExtResource("2_c1md4")]
-position = Vector2(452, 312)
+position = Vector2(471, 400)
+rotation = -2.7945442
 
 [node name="FishShadow3" parent="." instance=ExtResource("2_c1md4")]
-position = Vector2(679, 436)
+position = Vector2(685.99994, 481)
+rotation = -0.23779991

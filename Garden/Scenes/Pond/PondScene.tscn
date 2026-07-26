@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcwd7apyuhclv"]
+[gd_scene load_steps=9 format=3 uid="uid://bcwd7apyuhclv"]
 
 [ext_resource type="Script" uid="uid://b31mdnkgrdo2y" path="res://Garden/Scenes/Pond/pond_scene.gd" id="1_t2kks"]
 [ext_resource type="Texture2D" uid="uid://dhoypr3oubn6r" path="res://Garden/Garden - Art/BG_pond.jpg" id="2_m3opp"]
 [ext_resource type="Script" uid="uid://cph0g1c6n06yh" path="res://UI/change_scene_button.gd" id="3_t2kks"]
+[ext_resource type="Texture2D" uid="uid://btitisg4df3nj" path="res://UI/left_arrow.png" id="3_w303r"]
 [ext_resource type="PackedScene" uid="uid://cl1vl32kakjrj" path="res://Interactables/Minigames and Tasks/pond.tscn" id="4_klcuq"]
 [ext_resource type="PackedScene" uid="uid://xq66jkqtxu1p" path="res://Interactables/Minigames and Tasks/branch.tscn" id="5_q1sli"]
 [ext_resource type="PackedScene" uid="uid://csd0rvqiif5a4" path="res://Interactables/Pickups/Pickups - Scenes/MothCaterpillarPickup.tscn" id="6_m3opp"]
@@ -26,13 +27,19 @@ texture = ExtResource("2_m3opp")
 [node name="Canvas" type="CanvasLayer" parent="."]
 layer = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="Canvas"]
+position = Vector2(60, 292.00003)
+scale = Vector2(0.306, 0.306)
+texture = ExtResource("3_w303r")
+
 [node name="GrassButton" type="Button" parent="Canvas"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -26.5
-offset_right = 56.0
-offset_bottom = 26.5
+offset_top = -63.0
+offset_right = 111.0
+offset_bottom = 2.0
 grow_vertical = 2
 script = ExtResource("3_t2kks")
 target_name = "grass"

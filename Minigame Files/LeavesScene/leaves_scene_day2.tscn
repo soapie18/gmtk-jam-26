@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnncrrjce0nlv"]
+
+[ext_resource type="Texture2D" uid="uid://crn1h0gf1w47i" path="res://Garden/Garden - Art/BG_grass.jpg" id="2_8vr3a"]
+[ext_resource type="Texture2D" uid="uid://crp7gqx8xdgc4" path="res://Interactables/Pickups/Pickups - Art/Chrysalis.png" id="3_h5b0o"]
+[ext_resource type="Texture2D" uid="uid://b2qtqo8d615rq" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Leaf_Nom.png" id="3_usegi"]
+[ext_resource type="AudioStream" uid="uid://c07skrrhqfs6n" path="res://Minigame Files/Minigame Files - Audio/jubilantsoundeffect.mp3" id="5_o215g"]
+[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="6_ef03t"]
+
+[node name="LeavesSceneDay2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_8vr3a")
+
+[node name="leaves" type="Sprite2D" parent="."]
+position = Vector2(580, 364)
+scale = Vector2(0.6421212, 0.6421212)
+texture = ExtResource("3_usegi")
+
+[node name="chrysalis" type="Sprite2D" parent="."]
+position = Vector2(536, 315)
+scale = Vector2(0.25556818, 0.25556818)
+texture = ExtResource("3_h5b0o")
+flip_h = true
+
+[node name="chrysalis2" type="Sprite2D" parent="."]
+position = Vector2(704.99994, 223)
+rotation = -0.114994235
+scale = Vector2(0.24916619, 0.24916619)
+texture = ExtResource("3_h5b0o")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o215g")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 174.0
+offset_bottom = 84.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 25.0
+offset_right = 159.0
+offset_bottom = 80.0
+theme = ExtResource("6_ef03t")
+text = "Back"

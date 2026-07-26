@@ -98,10 +98,11 @@ _data = {
 }
 
 [node name="game" type="Node2D"]
+z_index = 1
 script = ExtResource("1_6eyyy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -100
+layer = 0
 scale = Vector2(3.6, 3.6)
 transform = Transform2D(3.6, 0, 0, 3.6, 0, 0)
 
@@ -114,62 +115,66 @@ offset_bottom = 0.2262268
 texture = ExtResource("1_usuiw")
 expand_mode = 1
 
-[node name="QuickTimeEvent" type="Node2D" parent="."]
+[node name="QuickTimeEvent" type="Node2D" parent="CanvasLayer"]
 visible = false
+visibility_layer = 0
 script = ExtResource("3_18ebn")
 
-[node name="bg" type="Sprite2D" parent="QuickTimeEvent"]
+[node name="bg" type="Sprite2D" parent="CanvasLayer/QuickTimeEvent"]
 position = Vector2(155, 119)
 scale = Vector2(2, 2)
 texture = ExtResource("4_qve6g")
 
-[node name="pointer" type="Sprite2D" parent="QuickTimeEvent"]
+[node name="pointer" type="Sprite2D" parent="CanvasLayer/QuickTimeEvent"]
 position = Vector2(110, 120)
 scale = Vector2(2, 2)
 texture = ExtResource("5_0d7uu")
 
-[node name="pos1" type="Marker2D" parent="QuickTimeEvent"]
+[node name="pos1" type="Marker2D" parent="CanvasLayer/QuickTimeEvent"]
 position = Vector2(94, 118)
 
-[node name="pos2" type="Marker2D" parent="QuickTimeEvent"]
+[node name="pos2" type="Marker2D" parent="CanvasLayer/QuickTimeEvent"]
 position = Vector2(216, 119)
 
-[node name="safezone_pos1" type="Marker2D" parent="QuickTimeEvent"]
+[node name="safezone_pos1" type="Marker2D" parent="CanvasLayer/QuickTimeEvent"]
 position = Vector2(149, 119)
 
-[node name="safezone_pos2" type="Marker2D" parent="QuickTimeEvent"]
+[node name="safezone_pos2" type="Marker2D" parent="CanvasLayer/QuickTimeEvent"]
 position = Vector2(161, 119)
 
-[node name="PidgeonNest" type="CharacterBody2D" parent="."]
+[node name="PidgeonNest" type="CharacterBody2D" parent="CanvasLayer"]
 unique_name_in_owner = true
-position = Vector2(536, 91)
+position = Vector2(156.66666, 108.33333)
 scale = Vector2(8, 8)
 script = ExtResource("1_73jn4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PidgeonNest"]
-position = Vector2(4, 29.125)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PidgeonNest"]
+position = Vector2(-0.06944275, -2.2916656)
+scale = Vector2(0.48749995, 0.3611111)
 shape = SubResource("CircleShape2D_s80qm")
 disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PidgeonNest"]
-position = Vector2(6.375004, 29.625)
-scale = Vector2(0.03, 0.03)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/PidgeonNest"]
+position = Vector2(0.6597214, -2.1527762)
+scale = Vector2(0.0076870066, 0.0076870066)
 sprite_frames = SubResource("SpriteFrames_rtwf6")
 animation = &"Fixed"
 
-[node name="hp" type="ProgressBar" parent="PidgeonNest"]
-offset_left = -9.125
-offset_top = 10.875
-offset_right = 17.875
-offset_bottom = 15.875
+[node name="hp" type="ProgressBar" parent="CanvasLayer/PidgeonNest"]
+anchors_preset = -1
+offset_left = -4.9652762
+offset_top = -10.173611
+offset_right = 5.0347238
+offset_bottom = -8.173611
 theme_override_styles/background = SubResource("StyleBoxFlat_04yys")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5y4ho")
 value = 100.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
-[node name="ConfettiBurst" type="GPUParticles2D" parent="PidgeonNest/hp"]
+[node name="ConfettiBurst" type="GPUParticles2D" parent="CanvasLayer/PidgeonNest/hp"]
 unique_name_in_owner = true
-position = Vector2(13.5, 0.5)
+position = Vector2(5.000002, 0.79861027)
 scale = Vector2(0.125, 0.125)
 emitting = false
 amount = 138
@@ -177,12 +182,12 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_7xmu7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PidgeonNest"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PidgeonNest"]
 libraries = {
 &"": SubResource("AnimationLibrary_k7wy6")
 }
 
-[node name="WinLabel" type="Label" parent="PidgeonNest"]
+[node name="WinLabel" type="Label" parent="CanvasLayer/PidgeonNest"]
 unique_name_in_owner = true
 visible = false
 offset_left = -37.875
@@ -192,38 +197,38 @@ offset_bottom = 51.5
 text = "NEST FIXED"
 horizontal_alignment = 1
 
-[node name="RepairSound" type="AudioStreamPlayer" parent="PidgeonNest"]
+[node name="RepairSound" type="AudioStreamPlayer" parent="CanvasLayer/PidgeonNest"]
 unique_name_in_owner = true
 stream = ExtResource("9_2me54")
 
-[node name="WinSound" type="AudioStreamPlayer" parent="PidgeonNest"]
+[node name="WinSound" type="AudioStreamPlayer" parent="CanvasLayer/PidgeonNest"]
 unique_name_in_owner = true
 stream = ExtResource("10_6eyyy")
 
-[node name="QuickTimeEventbar" type="Node2D" parent="."]
+[node name="QuickTimeEventbar" type="Node2D" parent="CanvasLayer"]
 unique_name_in_owner = true
-position = Vector2(400, 345)
+position = Vector2(156.38887, 155.55554)
 script = ExtResource("6_f4mwx")
 
-[node name="background" type="Sprite2D" parent="QuickTimeEventbar"]
-position = Vector2(159, 226)
-scale = Vector2(0.5, 0.5)
+[node name="background" type="Sprite2D" parent="CanvasLayer/QuickTimeEventbar"]
+position = Vector2(-4.111074, 0.3333705)
+scale = Vector2(0.08929295, 0.08929295)
 texture = ExtResource("4_qve6g")
 
-[node name="pointer" type="Sprite2D" parent="QuickTimeEventbar"]
-position = Vector2(163, 216)
+[node name="pointer" type="Sprite2D" parent="CanvasLayer/QuickTimeEventbar"]
+position = Vector2(-29.111013, -9.388844)
 rotation = -0.6981317
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.0600857, 0.0600857)
 texture = ExtResource("5_0d7uu")
 
-[node name="start" type="Marker2D" parent="QuickTimeEventbar"]
-position = Vector2(-145, 128)
+[node name="start" type="Marker2D" parent="CanvasLayer/QuickTimeEventbar"]
+position = Vector2(-59.388783, -13.277744)
 
-[node name="end" type="Marker2D" parent="QuickTimeEventbar"]
-position = Vector2(469, 119)
+[node name="end" type="Marker2D" parent="CanvasLayer/QuickTimeEventbar"]
+position = Vector2(53.666775, -11.611073)
 
-[node name="safestartpos" type="Marker2D" parent="QuickTimeEventbar"]
-position = Vector2(51, 119)
+[node name="safestartpos" type="Marker2D" parent="CanvasLayer/QuickTimeEventbar"]
+position = Vector2(-26.333242, -12.16663)
 
-[node name="safeendpos" type="Marker2D" parent="QuickTimeEventbar"]
-position = Vector2(289, 122)
+[node name="safeendpos" type="Marker2D" parent="CanvasLayer/QuickTimeEventbar"]
+position = Vector2(20.6112, -11.888859)

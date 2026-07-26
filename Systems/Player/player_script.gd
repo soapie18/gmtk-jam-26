@@ -31,7 +31,12 @@ func send_inventory_query(items_required: Array) -> void:
 func request_inventory_update(loot: String) -> void:
 	inventory_system.update_inventory(loot)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("pause"):
 		game_paused.emit()
+	
+	if minigame_manager.current_active_minigame == null && scene_manager.current_scene_instance != scene_manager.main_menu_instance:
+		ui.visible = true
+	else:
+		ui.visible = false

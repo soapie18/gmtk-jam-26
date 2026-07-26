@@ -40,10 +40,14 @@ theme = ExtResource("4_pc2b8")
 [node name="TextCooldown" type="Timer" parent="PlayerUI"]
 
 [node name="EndDay" type="Button" parent="PlayerUI"]
-offset_left = 20.0
-offset_top = 11.0
-offset_right = 100.0
-offset_bottom = 78.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = 83.0
+grow_horizontal = 0
 text = "End Day"
 
 [connection signal="pressed" from="PlayerUI/InventoryView" to="PlayerUI" method="_on_inventory_view_pressed"]

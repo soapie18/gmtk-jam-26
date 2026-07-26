@@ -56,19 +56,13 @@ func handle_minigame_request(minigame_name_tag) -> void:
 			cleanup_function = Callable(leaves_task_end)
 			
 			chosen_audio_index = 4
-		#"spider":
-			#selected_minigame = spider_minigame_file
-			#
-			#cleanup_function = Callable(spider_minigame_end)
-			#
-			#chosen_audio_index = 7
 		"branch":
 			selected_minigame = branch_minigame_file
 			
 			items_required_for_minigame.append("moth caterpillar")
 			items_required_for_minigame.append("apple")
 			
-			cleanup_function = Callable(feed_moths_task_end)
+			cleanup_function = Callable(branch_task_end)
 			
 			chosen_audio_index = 4
 		_:
@@ -112,12 +106,10 @@ func fishing_minigame_end(success: bool) -> void:
 	else:
 		pass
 
-# TODO: sophie's task
 func leaves_task_end() -> void:
 	audio_change_request.emit(1)
 	cleanup_minigame()
 
-# TODO: sophie's task
 func branch_task_end() -> void:
 	audio_change_request.emit(1)
 	cleanup_minigame()
@@ -133,10 +125,5 @@ func nest_minigame_end(success: bool) -> void:
 	cleanup_minigame()
 
 func spider_minigame_end() -> void:
-	audio_change_request.emit(1)
-	cleanup_minigame()
-
-# TODO: sophie's task
-func feed_moths_task_end() -> void:
 	audio_change_request.emit(1)
 	cleanup_minigame()

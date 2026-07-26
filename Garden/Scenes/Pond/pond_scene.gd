@@ -34,6 +34,7 @@ func _ready() -> void:
 	# Connecting to signal emitted by minigame items to say a minigame has
 	# been requested. Minigame manager and inventory will also be involved.
 	pond.minigame_requested.connect(handle_minigame_request)
+	branch.minigame_requested.connect(handle_minigame_request)
 	
 	flowers.flowers_watered.connect(handle_flowers_watered)
 
