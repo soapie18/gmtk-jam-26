@@ -70,6 +70,7 @@ func handle_minigame_request(minigame_name_tag) -> void:
 	
 	# Picked up in player.
 	minigame_inventory_query.emit(items_required_for_minigame)
+	await get_tree().create_timer(0.3).timeout
 	
 	if can_start_minigame:
 		print("ready to start this minigame!")

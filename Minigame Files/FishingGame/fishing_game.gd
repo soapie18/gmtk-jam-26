@@ -141,7 +141,7 @@ func _fail(_why: String):
 	
 	_shake(5.0, 0.20)
 	
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.5).timeout
 	finished_task.emit(false)
 
 func _success():
@@ -155,7 +155,7 @@ func _success():
 	_shake(10.0, 0.25)
 	_punch_ui(root_ui, 1.12, 0.18)
 	
-	await get_tree().create_timer(0.25).timeout
+	await get_tree().create_timer(0.5).timeout
 	finished_task.emit(true)
 	
 

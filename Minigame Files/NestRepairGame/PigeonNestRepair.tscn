@@ -161,7 +161,6 @@ sprite_frames = SubResource("SpriteFrames_rtwf6")
 animation = &"Fixed"
 
 [node name="hp" type="ProgressBar" parent="CanvasLayer/PidgeonNest"]
-anchors_preset = -1
 offset_left = -4.9652762
 offset_top = -10.173611
 offset_right = 5.0347238

@@ -29,4 +29,5 @@ func success():
 		WinLabel.show()
 		Skillcheck.hide()  
 		win_sound.play()
+		await get_tree().create_timer(1).timeout
 		finished_task.emit(true)
