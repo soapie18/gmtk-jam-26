@@ -7,6 +7,13 @@ extends Node2D
 
 #TODO change the preload for actual asset
 var inbloom_texture = preload("res://Interactables/Minigames and Tasks/Minigame Items - Art/Spider_Decend.png")
+var wilted_texture = preload("res://icon.svg")
+
+@export var butterfly1_texture: Texture2D
+@export var butterfly2_texture: Texture2D
+
+@onready var butterfly_sprite1 = $butterfly1
+@onready var butterfly_sprite2 = $butterfly2
 
 signal flowers_watered(identifier)
 
@@ -16,3 +23,10 @@ func _on_button_pressed() -> void:
 	flowers_watered.emit(flower_identifier)
 	
 	audio.play()
+
+func set_flowers_wilted() -> void:
+	sprite.texture = wilted_texture
+
+func spawn_butterflies() -> void:
+	butterfly_sprite1.texture = butterfly1_texture
+	butterfly_sprite2.texture = butterfly2_texture

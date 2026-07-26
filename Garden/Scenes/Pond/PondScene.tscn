@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcwd7apyuhclv"]
+[gd_scene load_steps=10 format=3 uid="uid://bcwd7apyuhclv"]
 
 [ext_resource type="Script" uid="uid://b31mdnkgrdo2y" path="res://Garden/Scenes/Pond/pond_scene.gd" id="1_t2kks"]
 [ext_resource type="Texture2D" uid="uid://dhoypr3oubn6r" path="res://Garden/Garden - Art/BG_pond.jpg" id="2_m3opp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xq66jkqtxu1p" path="res://Interactables/Minigames and Tasks/branch.tscn" id="5_q1sli"]
 [ext_resource type="PackedScene" uid="uid://csd0rvqiif5a4" path="res://Interactables/Pickups/Pickups - Scenes/MothCaterpillarPickup.tscn" id="6_m3opp"]
 [ext_resource type="PackedScene" uid="uid://k4kfympdqynj" path="res://Interactables/Minigames and Tasks/flowers.tscn" id="7_m3opp"]
+[ext_resource type="Texture2D" uid="uid://l4iyyw4hjjfd" path="res://Interactables/Pickups/Pickups - Art/Moth.png" id="9_rbohn"]
 
 [node name="PondScene" type="Node2D"]
 script = ExtResource("1_t2kks")
@@ -57,5 +58,7 @@ position = Vector2(685, 571)
 [node name="Flowers" parent="." instance=ExtResource("7_m3opp")]
 position = Vector2(860, 468)
 flower_identifier = "pond"
+butterfly1_texture = ExtResource("9_rbohn")
+butterfly2_texture = ExtResource("9_rbohn")
 
 [connection signal="pressed" from="Canvas/GrassButton" to="Canvas/GrassButton" method="_on_pressed"]

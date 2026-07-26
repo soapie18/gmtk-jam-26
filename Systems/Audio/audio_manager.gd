@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var scene_manager = $"../SceneManager"
 @onready var minigame_manager = $"../MinigameManager"
+@onready var day_manager = $"../DayManager"
 
 # Minigame music.
 var watering_flowers_bg: AudioStream = load("res://Minigame Files/Minigame Files - Audio/Watering Can (with a beat!).wav")
@@ -42,6 +43,7 @@ func set_audio_playing(audio_index: int) -> void:
 func _ready() -> void:
 	scene_manager.audio_change_request.connect(set_audio_playing)
 	minigame_manager.audio_change_request.connect(set_audio_playing)
+	day_manager.audio_change_request.connect(set_audio_playing)
 	
 	populate_playlist()
 	

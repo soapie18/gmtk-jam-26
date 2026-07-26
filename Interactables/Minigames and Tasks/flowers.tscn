@@ -22,4 +22,13 @@ offset_bottom = 146.28572
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vwnsh")
 
+[node name="butterfly1" type="Sprite2D" parent="."]
+position = Vector2(179.5625, -154.4375)
+scale = Vector2(0.17992423, 0.17992423)
+
+[node name="butterfly2" type="Sprite2D" parent="."]
+position = Vector2(-114, -314)
+scale = Vector2(0.17999999, 0.17999999)
+flip_h = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

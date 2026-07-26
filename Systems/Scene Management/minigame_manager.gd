@@ -7,7 +7,6 @@ extends Node2D
 @onready var pond_minigame_file = preload("res://Minigame Files/FishingGame/fishing_pond.tscn")
 @onready var nest_minigame_file = preload("res://Minigame Files/NestRepairGame/PigeonNestRepair.tscn")
 @onready var leaves_minigame_file = preload("res://Minigame Files/LeavesScene/leaves_scene.tscn")
-#@onready var spider_minigame_file
 @onready var branch_minigame_file = preload("res://Minigame Files/BranchScene/branch_scene.tscn")
 
 var selected_minigame: PackedScene
@@ -119,7 +118,7 @@ func nest_minigame_end(success: bool) -> void:
 	audio_change_request.emit(1)
 	
 	if success:
-		scene_manager.change_nest_sprite()
+		scene_manager.change_nest_sprite("fixed")
 		
 		day_manager.nest_fixed = true
 

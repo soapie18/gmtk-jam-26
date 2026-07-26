@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnncrrjce0nlv"]
+[gd_scene load_steps=7 format=3 uid="uid://dnncrrjce0nlv"]
 
+[ext_resource type="Script" uid="uid://dmsfugp140yxe" path="res://Minigame Files/LeavesScene/leaves_scene.gd" id="1_6dl0k"]
 [ext_resource type="Texture2D" uid="uid://crn1h0gf1w47i" path="res://Garden/Garden - Art/BG_grass.jpg" id="2_8vr3a"]
 [ext_resource type="Texture2D" uid="uid://crp7gqx8xdgc4" path="res://Interactables/Pickups/Pickups - Art/Chrysalis.png" id="3_h5b0o"]
 [ext_resource type="Texture2D" uid="uid://b2qtqo8d615rq" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Leaf_Nom.png" id="3_usegi"]
@@ -7,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="6_ef03t"]
 
 [node name="LeavesSceneDay2" type="Node2D"]
+script = ExtResource("1_6dl0k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -47,3 +49,5 @@ offset_right = 159.0
 offset_bottom = 80.0
 theme = ExtResource("6_ef03t")
 text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

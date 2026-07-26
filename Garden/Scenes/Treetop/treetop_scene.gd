@@ -13,6 +13,8 @@ extends Node2D
 @onready var spider = $Spider
 
 @onready var fixed_nest_texture = load("res://Interactables/Minigames and Tasks/Minigame Items - Art/Pidgeon_Fixed.png")
+@onready var three_hatchlings_texture = load("res://Interactables/Minigames and Tasks/Minigame Items - Art/3 hatchlings.png")
+@onready var two_hatchlings_texture = load("res://Interactables/Minigames and Tasks/Minigame Items - Art/2 hatchlings.png")
 
 signal scene_changed(target_scene_name: String)
 
@@ -45,5 +47,13 @@ func respond_to_item_pickup(item_name_tag: String):
 	# Picked up in scene_manager.
 	item_picked_up_in_scene.emit(item_name_tag, scene_name)
 
-func change_nest_sprite() -> void:
-	nest.sprite.texture = fixed_nest_texture
+func change_nest_sprite(sprite_identifier: String) -> void:
+	match sprite_identifier:
+		"fixed":
+			nest.sprite.texture = fixed_nest_texture
+		"3 hatchlings":
+			nest.sprite.texture = three_hatchlings_texture
+		"2 hatchlings":
+			nest.sprite.texture = two_hatchlings_texture
+		_:
+			return

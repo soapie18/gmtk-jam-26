@@ -100,8 +100,23 @@ func handle_quit() -> void:
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
 
+
 func handle_flowers_watered(identifier: String) -> void:
 	flowers_watered.emit(identifier)
 
-func change_nest_sprite() -> void:
-	treetop_scene_instance.change_nest_sprite()
+
+func set_flowers_wilted(identifier: String) -> void:
+	match identifier:
+		"grass":
+			grass_scene_instance.flowers.set_flowers_wilted()
+		"pond":
+			pond_scene_instance.flowers.set_flowers_wilted()
+
+
+func change_nest_sprite(sprite_identifier: String) -> void:
+	treetop_scene_instance.change_nest_sprite(sprite_identifier)
+
+
+func spawn_butterflies() -> void:
+	grass_scene_instance.flowers.spawn_butterflies()
+	pond_scene_instance.flower.spawn_butterflies()

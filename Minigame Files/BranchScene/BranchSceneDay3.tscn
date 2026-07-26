@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c077gq41k7y1f"]
 
-[ext_resource type="Script" uid="uid://duirl3222i6w3" path="res://Minigame Files/BranchScene/branch_scene_day_2.gd" id="1_7itur"]
+[ext_resource type="Script" uid="uid://duirl3222i6w3" path="res://Minigame Files/BranchScene/branch_scene_day_3.gd" id="1_7itur"]
 [ext_resource type="Texture2D" uid="uid://bsrt167r4xi5y" path="res://Minigame Files/BranchScene/Shrubs_bg.jpg" id="2_lyv70"]
 [ext_resource type="Texture2D" uid="uid://ljtt8l718a4l" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Log.png" id="3_4p6vs"]
 [ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="6_2b18o"]

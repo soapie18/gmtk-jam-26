@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://biokxkiswo4y4"]
 
 [ext_resource type="Texture2D" uid="uid://bsrt167r4xi5y" path="res://Minigame Files/BranchScene/Shrubs_bg.jpg" id="1_l72to"]
-[ext_resource type="Script" uid="uid://duirl3222i6w3" path="res://Minigame Files/BranchScene/branch_scene_day_2.gd" id="1_llrfe"]
+[ext_resource type="Script" uid="uid://oei103x71no5" path="res://Minigame Files/BranchScene/branch_closeup.gd" id="1_pw70c"]
 [ext_resource type="AudioStream" uid="uid://c07skrrhqfs6n" path="res://Minigame Files/Minigame Files - Audio/jubilantsoundeffect.mp3" id="2_dcs4y"]
 [ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="3_dcs4y"]
 [ext_resource type="Texture2D" uid="uid://ljtt8l718a4l" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Log.png" id="3_pw70c"]
 [ext_resource type="Texture2D" uid="uid://cq80f858dda4e" path="res://Interactables/Pickups/Pickups - Art/Cocoon.png" id="5_rvks0"]
 
 [node name="BranchSceneDay2" type="Node2D"]
-script = ExtResource("1_llrfe")
+script = ExtResource("1_pw70c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -2.0
@@ -49,3 +49,5 @@ offset_left = 44.0
 offset_top = 28.0
 offset_right = 185.0
 offset_bottom = 105.0
+
+[connection signal="pressed" from="exitbutton" to="." method="_on_exitbutton_pressed"]

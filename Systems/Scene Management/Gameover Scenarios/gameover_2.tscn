@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbqa7lc8iv8p"]
+[gd_scene load_steps=5 format=3 uid="uid://cbqa7lc8iv8p"]
 
-[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="1_t3ed4"]
+[ext_resource type="FontFile" uid="uid://dnwmhegqcp71g" path="res://Menus/Menus - Art/Chalkboard-Regular.ttf" id="1_t3ed4"]
 [ext_resource type="Texture2D" uid="uid://cq80f858dda4e" path="res://Interactables/Pickups/Pickups - Art/Cocoon.png" id="2_014af"]
 [ext_resource type="Texture2D" uid="uid://crp7gqx8xdgc4" path="res://Interactables/Pickups/Pickups - Art/Chrysalis.png" id="3_fvgdo"]
+
+[sub_resource type="Theme" id="Theme_014af"]
+default_font = ExtResource("1_t3ed4")
+default_font_size = 22
 
 [node name="Gameover2" type="CanvasLayer"]
 
@@ -26,7 +30,7 @@ offset_right = 86.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_t3ed4")
+theme = SubResource("Theme_014af")
 text = "When the creatures hatched into their new form, the garden was
 not ready, the flowers all wilted. In search of a better home,
 they flew on..
