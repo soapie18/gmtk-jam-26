@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://v8qvdfh2hwib"]
+[gd_scene load_steps=22 format=3 uid="uid://v8qvdfh2hwib"]
 
 [ext_resource type="Script" uid="uid://dpsdxovqrl5yy" path="res://Minigame Files/NestRepairGame/pigeon_nest_repair.gd" id="1_6eyyy"]
 [ext_resource type="Script" uid="uid://cljl4q5jchir4" path="res://Minigame Files/NestRepairGame/PidgeonNest.gd" id="1_73jn4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://vxr05cfy47ds" path="res://Minigame Files/NestRepairGame/Hatchlings_Open_Broken.png" id="6_qve6g"]
 [ext_resource type="AudioStream" uid="uid://c07skrrhqfs6n" path="res://Minigame Files/Minigame Files - Audio/jubilantsoundeffect.mp3" id="9_2me54"]
 [ext_resource type="AudioStream" uid="uid://dhvsdp6pgmgi2" path="res://Minigame Files/Minigame Files - Audio/successfulsoundeffect.mp3" id="10_6eyyy"]
+[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="10_u62sc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s80qm"]
 
@@ -101,10 +102,30 @@ _data = {
 z_index = 1
 script = ExtResource("1_6eyyy")
 
+[node name="instructions" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_top = 541.0
+offset_right = 977.0
+offset_bottom = 572.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("10_u62sc")
+text = "Hit spacebar in the green, fix the nest before time runs out!"
+horizontal_alignment = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 scale = Vector2(3.6, 3.6)
 transform = Transform2D(3.6, 0, 0, 3.6, 0, 0)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -188,12 +209,12 @@ libraries = {
 
 [node name="WinLabel" type="Label" parent="CanvasLayer/PidgeonNest"]
 unique_name_in_owner = true
-visible = false
-offset_left = -37.875
-offset_top = 28.5
-offset_right = 50.125
-offset_bottom = 51.5
-text = "NEST FIXED"
+offset_left = 60.451393
+offset_top = 51.875
+offset_right = 342.4514
+offset_bottom = 106.875
+theme = ExtResource("10_u62sc")
+text = "Nest fixed!"
 horizontal_alignment = 1
 
 [node name="RepairSound" type="AudioStreamPlayer" parent="CanvasLayer/PidgeonNest"]
