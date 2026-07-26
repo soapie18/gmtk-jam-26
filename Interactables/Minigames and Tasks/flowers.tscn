@@ -23,11 +23,11 @@ offset_bottom = 146.28572
 stream = ExtResource("3_vwnsh")
 
 [node name="butterfly1" type="Sprite2D" parent="."]
-position = Vector2(179.5625, -154.4375)
+position = Vector2(175, -283)
 scale = Vector2(0.17992423, 0.17992423)
 
 [node name="butterfly2" type="Sprite2D" parent="."]
-position = Vector2(-114, -314)
+position = Vector2(-110, -417)
 scale = Vector2(0.17999999, 0.17999999)
 flip_h = true
 
