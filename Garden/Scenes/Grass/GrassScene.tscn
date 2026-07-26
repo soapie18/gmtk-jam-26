@@ -25,6 +25,7 @@ texture = ExtResource("2_nqyqc")
 stretch_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="up_arrow" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(580, 52.000004)

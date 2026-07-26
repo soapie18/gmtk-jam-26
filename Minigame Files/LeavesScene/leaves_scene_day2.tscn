@@ -15,25 +15,34 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_8vr3a")
 
-[node name="leaves" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="leaves" type="Sprite2D" parent="Control"]
 position = Vector2(580, 364)
 scale = Vector2(0.6421212, 0.6421212)
 texture = ExtResource("3_usegi")
 
-[node name="chrysalis" type="Sprite2D" parent="."]
+[node name="chrysalis" type="Sprite2D" parent="Control"]
 position = Vector2(536, 315)
 scale = Vector2(0.25556818, 0.25556818)
 texture = ExtResource("3_h5b0o")
 flip_h = true
 
-[node name="chrysalis2" type="Sprite2D" parent="."]
+[node name="chrysalis2" type="Sprite2D" parent="Control"]
 position = Vector2(704.99994, 223)
-rotation = -0.114994235
+rotation = -0.11499423
 scale = Vector2(0.24916619, 0.24916619)
 texture = ExtResource("3_h5b0o")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_o215g")
+volume_db = -3.0
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -43,11 +52,12 @@ offset_right = 174.0
 offset_bottom = 84.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 36.0
-offset_top = 25.0
-offset_right = 159.0
-offset_bottom = 80.0
+offset_left = 28.0
+offset_top = 35.0
+offset_right = 151.0
+offset_bottom = 90.0
 theme = ExtResource("6_ef03t")
 text = "Back"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

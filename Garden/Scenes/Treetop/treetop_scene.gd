@@ -10,7 +10,6 @@ extends Node2D
 
 # Minigames found in this scene.
 @onready var nest = $Nest
-@onready var spider = $Spider
 
 @onready var fixed_nest_texture = load("res://Interactables/Minigames and Tasks/Minigame Items - Art/Pidgeon_Fixed.png")
 @onready var three_hatchlings_texture = load("res://Interactables/Minigames and Tasks/Minigame Items - Art/3 hatchlings.png")
@@ -34,7 +33,6 @@ func _ready() -> void:
 	# Connecting to signal emitted by minigame items to say a minigame has
 	# been requested. Minigame manager and inventory will also be involved.
 	nest.minigame_requested.connect(handle_minigame_request)
-	spider.minigame_requested.connect(handle_minigame_request)
 
 func handle_scene_request(target_scene_name) -> void:
 	scene_changed.emit(target_scene_name)
@@ -54,6 +52,7 @@ func change_nest_sprite(sprite_identifier: String) -> void:
 		"3 hatchlings":
 			nest.sprite.texture = three_hatchlings_texture
 		"2 hatchlings":
-			nest.sprite.texture = two_hatchlings_texture
+			if nest != null:
+				nest.sprite.texture = two_hatchlings_texture
 		_:
 			return

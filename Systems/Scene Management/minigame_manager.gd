@@ -69,7 +69,7 @@ func handle_minigame_request(minigame_name_tag) -> void:
 	
 	# Picked up in player.
 	minigame_inventory_query.emit(items_required_for_minigame)
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	if can_start_minigame:
 		print("ready to start this minigame!")
@@ -86,7 +86,8 @@ func handle_minigame_request(minigame_name_tag) -> void:
 
 
 func cleanup_minigame() -> void:
-	current_active_minigame.queue_free()
+	if current_active_minigame != null:
+		current_active_minigame.queue_free()
 
 # These functions will be tied to signals emitted within the games/tasks in
 # question. They handle the outcomes of the task/game. may disable replay, may
@@ -108,10 +109,12 @@ func fishing_minigame_end(success: bool) -> void:
 
 func leaves_task_end() -> void:
 	audio_change_request.emit(1)
+	scene_manager.handle_creatures_fed("monarch")
 	cleanup_minigame()
 
 func branch_task_end() -> void:
 	audio_change_request.emit(1)
+	scene_manager.handle_creatures_fed("moth")
 	cleanup_minigame()
 
 func nest_minigame_end(success: bool) -> void:

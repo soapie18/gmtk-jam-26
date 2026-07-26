@@ -22,30 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.985686, 0.80435973, 0.64773107, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(165.00003, 173.00003)
-scale = Vector2(0.31030306, 0.31030306)
-texture = ExtResource("1_nxjkt")
-flip_h = true
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-modulate = Color(0.7856274, 0.9461921, 0.873075, 1)
-position = Vector2(845, 130)
-scale = Vector2(0.18212123, 0.18212123)
-texture = ExtResource("1_nxjkt")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(979, 342)
-scale = Vector2(0.295606, 0.295606)
-texture = ExtResource("2_1w1qs")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-modulate = Color(0.99999994, 0.79632396, 0.5070354, 1)
-position = Vector2(289, 412)
-scale = Vector2(0.14598483, 0.14598483)
-texture = ExtResource("2_1w1qs")
-flip_h = true
-
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,3 +56,35 @@ theme = SubResource("Theme_nxjkt")
 text = "Credits: 
 Dev:  Sophie + Shaun    Art:  Cordelia    Audio & Music:  Amelie, James, Zoe, Luke"
 horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(165.00003, 173.00003)
+scale = Vector2(0.31030306, 0.31030306)
+texture = ExtResource("1_nxjkt")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control"]
+modulate = Color(0.7856274, 0.9461921, 0.873075, 1)
+position = Vector2(845, 130)
+scale = Vector2(0.18212123, 0.18212123)
+texture = ExtResource("1_nxjkt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
+position = Vector2(979, 342)
+scale = Vector2(0.295606, 0.295606)
+texture = ExtResource("2_1w1qs")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control"]
+modulate = Color(0.99999994, 0.79632396, 0.5070354, 1)
+position = Vector2(289, 412)
+scale = Vector2(0.14598483, 0.14598483)
+texture = ExtResource("2_1w1qs")
+flip_h = true

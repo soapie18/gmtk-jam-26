@@ -21,6 +21,8 @@ signal minigame_requested_in_scene(minigame_name_tag: String)
 
 signal flowers_watered(identifier: String)
 
+signal creature_fed(identifier: String)
+
 func _ready() -> void:
 	# Instantiating all 4 scenes to be added and removed from tree freely.
 	main_menu_instance = main_menu.instantiate()
@@ -104,6 +106,8 @@ func handle_quit() -> void:
 func handle_flowers_watered(identifier: String) -> void:
 	flowers_watered.emit(identifier)
 
+func handle_creatures_fed(identifier: String) -> void:
+	creature_fed.emit(identifier)
 
 func set_flowers_wilted(identifier: String) -> void:
 	match identifier:

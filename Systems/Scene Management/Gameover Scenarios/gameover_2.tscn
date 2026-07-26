@@ -44,17 +44,22 @@ they flew on..
 Automatically leaving the garden soon, please be patient"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(230.00003, 366)
 rotation = -0.2565886
 scale = Vector2(0.42836705, 0.42836705)
 texture = ExtResource("2_014af")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
 position = Vector2(944.99994, 189)
 rotation = -0.46579993
-scale = Vector2(0.49456787, 0.49456787)
+scale = Vector2(0.4945679, 0.4945679)
 texture = ExtResource("3_fvgdo")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true

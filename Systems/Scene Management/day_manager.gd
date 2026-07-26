@@ -13,14 +13,14 @@ var day_end_screen_instance
 var day_index: int = 1
 
 # Day one conditions to progress to Day 2.
-var flowers_1_watered: bool
-var flowers_2_watered: bool
+var flowers_1_watered: bool = false
+var flowers_2_watered: bool = false
 
 var nest_fixed: bool = false
 
 # Day two conditions to progress to Day 3.
-var caterpillars_fed: bool
-var larvae_fed: bool
+var caterpillars_fed: bool = false
+var larvae_fed: bool = false
 
 signal audio_change_request
 
@@ -29,6 +29,7 @@ func _ready() -> void:
 	day_end_screen_instance = day_end_screen.instantiate()
 	
 	scene_manager.flowers_watered.connect(update_flowers_watered)
+	scene_manager.creature_fed.connect(update_creatures_fed)
 
 
 func update_flowers_watered(identifier: String) -> void:
@@ -42,6 +43,13 @@ func update_flowers_watered(identifier: String) -> void:
 			flowers_2_watered = true
 			print("flowers in grass scene watered:")
 			print(flowers_2_watered)
+
+func update_creatures_fed(identifier: String) -> void:
+	match identifier:
+		"monarch":
+			caterpillars_fed = true
+		"moth":
+			larvae_fed = true
 
 
 func customise_day_end_screen() -> void:

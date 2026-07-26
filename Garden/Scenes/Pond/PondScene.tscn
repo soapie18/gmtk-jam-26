@@ -56,7 +56,7 @@ position = Vector2(185, 437)
 position = Vector2(685, 571)
 
 [node name="Flowers" parent="." instance=ExtResource("7_m3opp")]
-position = Vector2(860, 468)
+position = Vector2(842, 428)
 flower_identifier = "pond"
 butterfly1_texture = ExtResource("9_rbohn")
 butterfly2_texture = ExtResource("9_rbohn")

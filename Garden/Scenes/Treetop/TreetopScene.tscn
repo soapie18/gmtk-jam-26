@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b38yg0bhirm61"]
+[gd_scene load_steps=7 format=3 uid="uid://b38yg0bhirm61"]
 
 [ext_resource type="Script" uid="uid://dtutp3tkqetuj" path="res://Garden/Scenes/Treetop/treetop_scene.gd" id="1_wpsbn"]
 [ext_resource type="Texture2D" uid="uid://hdpa1ep4ofrd" path="res://Garden/Garden - Art/BG_treetop.jpg" id="2_3pbqt"]
 [ext_resource type="Texture2D" uid="uid://coyolsvul0qq" path="res://UI/down_arrow.png" id="3_u35v1"]
 [ext_resource type="Script" uid="uid://cph0g1c6n06yh" path="res://UI/change_scene_button.gd" id="3_wpsbn"]
 [ext_resource type="PackedScene" uid="uid://c38na3fdg74kr" path="res://Interactables/Minigames and Tasks/nest.tscn" id="4_u35v1"]
-[ext_resource type="PackedScene" uid="uid://bsfpxn450yi5h" path="res://Interactables/Minigames and Tasks/spider.tscn" id="5_5wh4a"]
 [ext_resource type="PackedScene" uid="uid://dbgd68paeyixe" path="res://Interactables/Pickups/Pickups - Scenes/ApplePickup.tscn" id="7_uagf4"]
 
 [node name="TreetopScene" type="Node2D"]
@@ -19,6 +18,7 @@ offset_bottom = 685.0
 texture = ExtResource("2_3pbqt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="down_arrow" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(578, 597)
@@ -44,11 +44,8 @@ metadata/_custom_type_script = "uid://cph0g1c6n06yh"
 [node name="Nest" parent="." instance=ExtResource("4_u35v1")]
 position = Vector2(721, 248)
 
-[node name="Spider" parent="." instance=ExtResource("5_5wh4a")]
-position = Vector2(351, 219)
-
 [node name="ApplePickup" parent="." instance=ExtResource("7_uagf4")]
-position = Vector2(950.00006, 288.00003)
+position = Vector2(354.00003, 379.00003)
 rotation = -0.10061089
 
 [connection signal="pressed" from="CanvasLayer/GrassButton" to="CanvasLayer/GrassButton" method="_on_pressed"]

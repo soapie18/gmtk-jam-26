@@ -13,6 +13,7 @@ script = ExtResource("1_pc2b8")
 [node name="InventorySystem" parent="." instance=ExtResource("3_mqks5")]
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
+layer = 0
 script = ExtResource("4_wc1dy")
 
 [node name="InventoryView" type="Button" parent="PlayerUI"]

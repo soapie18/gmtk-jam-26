@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://cx00si32fjbga"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cx00si32fjbga"]
+
+[ext_resource type="FontFile" uid="uid://dnwmhegqcp71g" path="res://Menus/Menus - Art/Chalkboard-Regular.ttf" id="1_oalcs"]
 
 [resource]
-default_font_size = 60
+default_font = ExtResource("1_oalcs")
+default_font_size = 68

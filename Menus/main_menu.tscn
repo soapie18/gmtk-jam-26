@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dopgt5elscy3k"]
+[gd_scene load_steps=8 format=3 uid="uid://dopgt5elscy3k"]
 
 [ext_resource type="Script" uid="uid://hd443818uhcs" path="res://Menus/main_menu.gd" id="1_p3jrs"]
 [ext_resource type="Texture2D" uid="uid://crn1h0gf1w47i" path="res://Garden/Garden - Art/BG_grass.jpg" id="2_11gta"]
-[ext_resource type="Theme" uid="uid://cx00si32fjbga" path="res://Menus/Menus - Art/title_theme.tres" id="3_at0u2"]
 [ext_resource type="PackedScene" uid="uid://b8gleo3k6i3fb" path="res://UI/ChangeSceneButton.tscn" id="4_11gta"]
+[ext_resource type="FontFile" uid="uid://dnwmhegqcp71g" path="res://Menus/Menus - Art/Chalkboard-Regular.ttf" id="5_cxdly"]
+[ext_resource type="Texture2D" uid="uid://jjoxpgis1nc5" path="res://Interactables/Pickups/Pickups - Art/Monarch.png" id="5_vxn86"]
+
+[sub_resource type="Theme" id="Theme_gn11b"]
+default_font = ExtResource("5_cxdly")
+default_font_size = 102
+
+[sub_resource type="Theme" id="Theme_vxn86"]
+default_font = ExtResource("5_cxdly")
+default_font_size = 49
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_p3jrs")
@@ -22,13 +31,13 @@ stretch_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -130.0
-offset_top = 144.0
-offset_right = 131.0
-offset_bottom = 227.0
+offset_left = -190.0
+offset_top = 179.0
+offset_right = 191.0
+offset_bottom = 272.0
 grow_horizontal = 2
-theme = ExtResource("3_at0u2")
-theme_override_colors/font_color = Color(0.6763581, 0.9999998, 0.76085657, 1)
+theme = SubResource("Theme_gn11b")
+theme_override_colors/font_color = Color(0.8235294, 0.5254902, 0.19215687, 1)
 text = "Chrysalis"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -47,6 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ChangeSceneButton" parent="CanvasLayer/VBoxContainer" instance=ExtResource("4_11gta")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 text = "
 Play
@@ -55,14 +65,54 @@ Play
 target_name = "grass"
 
 [node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 text = "
 Quit
 
 "
 
-[node name="ButerflySpriteDecoration" type="Sprite2D" parent="."]
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 2.0
+offset_right = 41.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vxn86")
+text = "Play"
 
-[node name="MothSpriteDecoration" type="Sprite2D" parent="."]
+[node name="Label3" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 81.0
+offset_right = 41.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vxn86")
+text = "Quit"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButerflySpriteDecoration" type="Sprite2D" parent="Control"]
+position = Vector2(811.99994, 157)
+scale = Vector2(0.18878779, 0.18878779)
+texture = ExtResource("5_vxn86")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

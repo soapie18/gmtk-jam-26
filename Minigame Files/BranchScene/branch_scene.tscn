@@ -25,6 +25,7 @@ texture = ExtResource("3_cs6je")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_uxs2j")
+volume_db = -3.0
 
 [node name="bug1" type="Sprite2D" parent="."]
 position = Vector2(897, 329.99997)

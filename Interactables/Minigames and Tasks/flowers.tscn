@@ -10,25 +10,30 @@ flower_identifier = "1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(23, 26.25)
-scale = Vector2(0.359375, 0.35546875)
+scale = Vector2(0.15812497, 0.15640622)
 texture = ExtResource("2_vwnsh")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
-offset_right = 130.78261
-offset_bottom = 146.28572
+offset_left = 4.0000005
+offset_top = -47.0
+offset_right = 134.78261
+offset_bottom = 99.28572
+rotation = 0.20525196
+scale = Vector2(0.68000007, 1.1199996)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vwnsh")
+volume_db = -1.0
 
 [node name="butterfly1" type="Sprite2D" parent="."]
-position = Vector2(175, -283)
-scale = Vector2(0.17992423, 0.17992423)
+position = Vector2(172, -112)
+scale = Vector2(0.07916664, 0.07916664)
 
 [node name="butterfly2" type="Sprite2D" parent="."]
-position = Vector2(-110, -417)
-scale = Vector2(0.17999999, 0.17999999)
+position = Vector2(-98.00001, -204.00002)
+scale = Vector2(0.079199985, 0.079199985)
 flip_h = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

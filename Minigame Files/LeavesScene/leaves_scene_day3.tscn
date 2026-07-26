@@ -26,11 +26,12 @@ offset_right = 174.0
 offset_bottom = 84.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 36.0
-offset_top = 25.0
-offset_right = 159.0
-offset_bottom = 80.0
+offset_left = 28.0
+offset_top = 35.0
+offset_right = 151.0
+offset_bottom = 90.0
 theme = ExtResource("5_frkmu")
 text = "Back"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
