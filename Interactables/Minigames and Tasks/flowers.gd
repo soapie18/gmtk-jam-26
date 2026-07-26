@@ -6,8 +6,8 @@ extends Node2D
 @onready var audio = $AudioStreamPlayer
 
 #TODO change the preload for actual asset
-var inbloom_texture = preload("res://Interactables/Minigames and Tasks/Minigame Items - Art/Spider_Decend.png")
-var wilted_texture = preload("res://icon.svg")
+var inbloom_texture = preload("res://Interactables/Minigames and Tasks/Minigame Items - Art/Flower_Happy.png")
+var wilted_texture = preload("res://Interactables/Minigames and Tasks/Minigame Items - Art/Flower_Wilt.png")
 
 @export var butterfly1_texture: Texture2D
 @export var butterfly2_texture: Texture2D

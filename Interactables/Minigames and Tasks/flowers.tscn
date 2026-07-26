@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://k4kfympdqynj"]
 
 [ext_resource type="Script" uid="uid://g6y06dnm7ly0" path="res://Interactables/Minigames and Tasks/flowers.gd" id="1_n4u55"]
-[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_1dmws"]
+[ext_resource type="Texture2D" uid="uid://kti60xsa4je8" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Flower_Wilt.png" id="2_vwnsh"]
 [ext_resource type="AudioStream" uid="uid://delphpd25qdf" path="res://Spare sfx/watering_can.wav" id="3_vwnsh"]
 
 [node name="Flowers" type="Node2D"]
@@ -11,7 +11,7 @@ flower_identifier = "1"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(23, 26.25)
 scale = Vector2(0.359375, 0.35546875)
-texture = ExtResource("2_1dmws")
+texture = ExtResource("2_vwnsh")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
