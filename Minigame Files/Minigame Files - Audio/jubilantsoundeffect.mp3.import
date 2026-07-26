@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c07skrrhqfs6n"
+path="res://.godot/imported/jubilantsoundeffect.mp3-ee6695edaa4b8630117f331da35ffd3f.mp3str"
+
+[deps]
+
+source_file="res://Minigame Files/Minigame Files - Audio/jubilantsoundeffect.mp3"
+dest_files=["res://.godot/imported/jubilantsoundeffect.mp3-ee6695edaa4b8630117f331da35ffd3f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

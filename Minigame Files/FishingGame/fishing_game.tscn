@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdnndtbw5x3pi"]
+[gd_scene load_steps=9 format=3 uid="uid://bdnndtbw5x3pi"]
 
 [ext_resource type="Script" uid="uid://dgi073h1avs2p" path="res://Minigame Files/FishingGame/fishing_game.gd" id="1_6o7ao"]
 [ext_resource type="Resource" uid="uid://gfjn6ye116uu" path="res://Minigame Files/FishingGame/Fish.tres" id="2_1qyyv"]
-[ext_resource type="Texture2D" uid="uid://it8vtppvs3mp" path="res://icon.svg" id="2_826u1"]
 [ext_resource type="Resource" uid="uid://cbfp37hjkp7fd" path="res://Minigame Files/FishingGame/Rod.tres" id="3_n43jp"]
+[ext_resource type="Texture2D" uid="uid://dd2tiv2fvqe1w" path="res://Garden/Garden - Art/Cordi Art/Pond_BG.png" id="4_ngcjq"]
 [ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="5_h87qr"]
+[ext_resource type="Texture2D" uid="uid://bc57a0ptnplg3" path="res://Garden/Garden - Art/Cordi Art/Fish_Shadow.png" id="5_m5yjt"]
+[ext_resource type="Texture2D" uid="uid://trcok7h7ju1v" path="res://Garden/Garden - Art/Cordi Art/LilyPad.png" id="6_m5yjt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1qyyv"]
 particle_flag_disable_z = true
@@ -31,19 +33,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -4.0
-offset_right = 562.1763
-offset_bottom = 68.65167
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.68000007, 0.9200006)
-color = Color(0, 0.44705883, 0.91764706, 1)
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 169.41176
+offset_bottom = 70.434784
+scale = Vector2(6.8, 9.2)
+texture = ExtResource("4_ngcjq")
+expand_mode = 1
 
 [node name="ExitButton" type="Button" parent="Control"]
 z_index = 2
@@ -77,16 +73,17 @@ offset_left = -57.0
 offset_top = -247.0
 offset_right = 63.0
 offset_bottom = 259.0
-color = Color(0.8925621, 0.39953732, 0.33449927, 1)
+color = Color(0.63529414, 0.88235295, 0.9411765, 1)
 
-[node name="TheGreen" type="ColorRect" parent="Control/CatchBox"]
+[node name="LilyPad" type="TextureRect" parent="Control/CatchBox"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -40.0
-offset_top = 149.0
-offset_right = 41.0
-offset_bottom = 231.0
-color = Color(0.30588236, 1, 0.16470589, 1)
+offset_left = -43.0
+offset_top = 150.0
+offset_right = 55.0
+offset_bottom = 252.0
+texture = ExtResource("6_m5yjt")
+expand_mode = 1
 
 [node name="FihhIcon" type="TextureRect" parent="Control/CatchBox"]
 unique_name_in_owner = true
@@ -95,7 +92,7 @@ offset_left = -39.0
 offset_top = 14.0
 offset_right = 38.0
 offset_bottom = 102.0
-texture = ExtResource("2_826u1")
+texture = ExtResource("5_m5yjt")
 expand_mode = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/CatchBox"]
@@ -110,6 +107,7 @@ fill_mode = 3
 [node name="FishCaughtLabel" type="Label" parent="Control"]
 unique_name_in_owner = true
 visible = false
+modulate = Color(0.0014785473, 0, 11.158822, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -130,7 +128,8 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_1qyyv")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="howtoplayLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
