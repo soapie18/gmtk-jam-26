@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://xq66jkqtxu1p"]
+[gd_scene load_steps=4 format=3 uid="uid://xq66jkqtxu1p"]
 
 [ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_ysmp1"]
+[ext_resource type="Texture2D" uid="uid://ljtt8l718a4l" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Log.png" id="2_s8wvo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqs3e"]
+radius = 293.13422
+height = 1388.2363
 
 [node name="Branch" type="Node2D"]
 script = ExtResource("1_ysmp1")
 minigame_tag = "branch"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -6)
+scale = Vector2(0.21545455, 0.21545455)
+texture = ExtResource("2_s8wvo")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(23.206749, 51.05485)
+rotation = -1.9710405
+shape = SubResource("CapsuleShape2D_sqs3e")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

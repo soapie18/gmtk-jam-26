@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://en8mmvro3bud"]
+[gd_scene load_steps=4 format=3 uid="uid://en8mmvro3bud"]
 
 [ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_q6kfv"]
+[ext_resource type="Texture2D" uid="uid://b2qtqo8d615rq" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Leaf_Nom.png" id="2_jbh43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6kfv"]
+size = Vector2(1024.8047, 1031.25)
 
 [node name="Leaves" type="Node2D"]
 script = ExtResource("1_q6kfv")
 minigame_tag = "leaves"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -9)
+scale = Vector2(0.15515152, 0.15515152)
+texture = ExtResource("2_jbh43")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-3.2226563, 70.89844)
+shape = SubResource("RectangleShape2D_q6kfv")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

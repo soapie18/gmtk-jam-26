@@ -35,12 +35,13 @@ target_name = "grass"
 metadata/_custom_type_script = "uid://cph0g1c6n06yh"
 
 [node name="Nest" parent="." instance=ExtResource("4_u35v1")]
-position = Vector2(747, 321)
+position = Vector2(721, 248)
 
 [node name="Spider" parent="." instance=ExtResource("5_5wh4a")]
-position = Vector2(352, 180)
+position = Vector2(351, 219)
 
 [node name="ApplePickup" parent="." instance=ExtResource("7_uagf4")]
-position = Vector2(534, 461)
+position = Vector2(950.00006, 288.00003)
+rotation = -0.10061089
 
 [connection signal="pressed" from="CanvasLayer/GrassButton" to="CanvasLayer/GrassButton" method="_on_pressed"]

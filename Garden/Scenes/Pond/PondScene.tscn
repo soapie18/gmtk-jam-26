@@ -16,9 +16,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 2.0
-offset_top = -115.0
-offset_right = 1156.216
-offset_bottom = 655.0
+offset_top = -124.0
+offset_right = 1153.0
+offset_bottom = 649.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_m3opp")
@@ -39,10 +39,10 @@ target_name = "grass"
 metadata/_custom_type_script = "uid://cph0g1c6n06yh"
 
 [node name="Pond" parent="." instance=ExtResource("4_klcuq")]
-position = Vector2(614, 468)
+position = Vector2(534, 406)
 
 [node name="Branch" parent="." instance=ExtResource("5_q1sli")]
-position = Vector2(251, 379)
+position = Vector2(176, 437)
 
 [node name="MothCaterpillarPickup" parent="." instance=ExtResource("6_m3opp")]
 position = Vector2(327, 581)

@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dgi073h1avs2p" path="res://Minigame Files/FishingGame/fishing_game.gd" id="1_6o7ao"]
 [ext_resource type="Resource" uid="uid://gfjn6ye116uu" path="res://Minigame Files/FishingGame/Fish.tres" id="2_1qyyv"]
 [ext_resource type="Resource" uid="uid://cbfp37hjkp7fd" path="res://Minigame Files/FishingGame/Rod.tres" id="3_n43jp"]
-[ext_resource type="Texture2D" uid="uid://dd2tiv2fvqe1w" path="res://Garden/Garden - Art/Cordi Art/Pond_BG.png" id="4_ngcjq"]
+[ext_resource type="Texture2D" uid="uid://dd2tiv2fvqe1w" path="res://Minigame Files/FishingGame/Pond_BG.png" id="4_ngcjq"]
 [ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="5_h87qr"]
-[ext_resource type="Texture2D" uid="uid://bc57a0ptnplg3" path="res://Garden/Garden - Art/Cordi Art/Fish_Shadow.png" id="5_m5yjt"]
-[ext_resource type="Texture2D" uid="uid://trcok7h7ju1v" path="res://Garden/Garden - Art/Cordi Art/LilyPad.png" id="6_m5yjt"]
+[ext_resource type="Texture2D" uid="uid://bc57a0ptnplg3" path="res://Minigame Files/FishingGame/Fish_Shadow.png" id="5_m5yjt"]
+[ext_resource type="Texture2D" uid="uid://trcok7h7ju1v" path="res://Minigame Files/FishingGame/LilyPad.png" id="6_m5yjt"]
 [ext_resource type="AudioStream" uid="uid://cexycdinfsc0g" path="res://Minigame Files/Minigame Files - Audio/failsoundeffect.mp3" id="8_cj4kf"]
 [ext_resource type="AudioStream" uid="uid://dhvsdp6pgmgi2" path="res://Minigame Files/Minigame Files - Audio/successfulsoundeffect.mp3" id="9_1pcs7"]
 

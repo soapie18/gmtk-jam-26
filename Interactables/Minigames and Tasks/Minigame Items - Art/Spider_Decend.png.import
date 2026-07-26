@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciubt47o28b7k"
-path="res://.godot/imported/pointer.png-959204595457867e624e6ffa106f8435.ctex"
+uid="uid://4ys8r3os0qqv"
+path="res://.godot/imported/Spider_Decend.png-d30cf53f4efe83390d112440da2bbb86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Garden/Garden - Art/Cordi Art/pointer.png"
-dest_files=["res://.godot/imported/pointer.png-959204595457867e624e6ffa106f8435.ctex"]
+source_file="res://Interactables/Minigames and Tasks/Minigame Items - Art/Spider_Decend.png"
+dest_files=["res://.godot/imported/Spider_Decend.png-d30cf53f4efe83390d112440da2bbb86.ctex"]
 
 [params]
 

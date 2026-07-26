@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc57a0ptnplg3"
-path="res://.godot/imported/Fish_Shadow.png-2023491cf50c90ad87e546d4076cc898.ctex"
+uid="uid://b2qtqo8d615rq"
+path="res://.godot/imported/Leaf_Nom.png-bdae3f314e6539cdf35107e35fddc232.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Garden/Garden - Art/Cordi Art/Fish_Shadow.png"
-dest_files=["res://.godot/imported/Fish_Shadow.png-2023491cf50c90ad87e546d4076cc898.ctex"]
+source_file="res://Interactables/Minigames and Tasks/Minigame Items - Art/Leaf_Nom.png"
+dest_files=["res://.godot/imported/Leaf_Nom.png-bdae3f314e6539cdf35107e35fddc232.ctex"]
 
 [params]
 

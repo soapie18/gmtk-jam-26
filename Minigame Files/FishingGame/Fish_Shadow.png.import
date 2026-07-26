@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://trcok7h7ju1v"
-path="res://.godot/imported/LilyPad.png-ac575514fd5bf592abe676a293720531.ctex"
+uid="uid://bc57a0ptnplg3"
+path="res://.godot/imported/Fish_Shadow.png-bdec200df3ab77ce097cab7bf87f3a53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Garden/Garden - Art/Cordi Art/LilyPad.png"
-dest_files=["res://.godot/imported/LilyPad.png-ac575514fd5bf592abe676a293720531.ctex"]
+source_file="res://Minigame Files/FishingGame/Fish_Shadow.png"
+dest_files=["res://.godot/imported/Fish_Shadow.png-bdec200df3ab77ce097cab7bf87f3a53.ctex"]
 
 [params]
 

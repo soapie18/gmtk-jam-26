@@ -60,7 +60,7 @@ position = Vector2(671, 546)
 position = Vector2(1013, 552)
 
 [node name="Leaves" parent="." instance=ExtResource("8_wqhcx")]
-position = Vector2(428, 380)
+position = Vector2(423, 383)
 
 [node name="Flowers" parent="." instance=ExtResource("8_nqyqc")]
 position = Vector2(815, 493)

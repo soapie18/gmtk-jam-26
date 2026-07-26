@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coe4jtpkpi3ip"
-path="res://.godot/imported/Nest_Broken.png-69a49b176f867f13435bc8cc7f607a08.ctex"
+uid="uid://ljtt8l718a4l"
+path="res://.godot/imported/Log.png-3c662b4a2c70366341cd618993627efc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Garden/Garden - Art/Cordi Art/Nest_Broken.png"
-dest_files=["res://.godot/imported/Nest_Broken.png-69a49b176f867f13435bc8cc7f607a08.ctex"]
+source_file="res://Interactables/Minigames and Tasks/Minigame Items - Art/Log.png"
+dest_files=["res://.godot/imported/Log.png-3c662b4a2c70366341cd618993627efc.ctex"]
 
 [params]
 

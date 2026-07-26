@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbgd68paeyixe"]
+[gd_scene load_steps=4 format=3 uid="uid://dbgd68paeyixe"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_cvbvr"]
+[ext_resource type="Texture2D" uid="uid://hillwl01nxo6" path="res://Interactables/Pickups/Pickups - Art/Apple.png" id="2_i57om"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvbvr"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wd2xx"]
+radius = 403.44577
 
 [node name="ApplePickup" type="Node2D"]
 script = ExtResource("1_cvbvr")
 name_tag = "apple"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16.218752, -16.218752)
+scale = Vector2(0.07900515, 0.07900515)
+texture = ExtResource("2_i57om")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-shape = SubResource("CapsuleShape2D_cvbvr")
+position = Vector2(10.013641, 10.013641)
+shape = SubResource("CircleShape2D_wd2xx")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]

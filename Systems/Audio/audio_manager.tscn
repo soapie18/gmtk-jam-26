@@ -10,4 +10,4 @@ script = ExtResource("1_jisk1")
 process_mode = 3
 process_priority = 1
 stream = ExtResource("2_qta38")
-volume_db = 0.5
+volume_db = 0.1

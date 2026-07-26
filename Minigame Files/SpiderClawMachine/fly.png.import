@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6e1oov7m72t"
-path="res://.godot/imported/Hatchlings_Closed_Broken.png-e1ab7d56cefdc07eb29132068ca0460f.ctex"
+uid="uid://bl53i0wchm27a"
+path="res://.godot/imported/fly.png-aba3b69a50fdedcc3f505dfb79953d9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Garden/Garden - Art/Cordi Art/Hatchlings_Closed_Broken.png"
-dest_files=["res://.godot/imported/Hatchlings_Closed_Broken.png-e1ab7d56cefdc07eb29132068ca0460f.ctex"]
+source_file="res://Minigame Files/SpiderClawMachine/fly.png"
+dest_files=["res://.godot/imported/fly.png-aba3b69a50fdedcc3f505dfb79953d9b.ctex"]
 
 [params]
 
