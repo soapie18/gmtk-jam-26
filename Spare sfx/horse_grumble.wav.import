@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r4gnbb5lc1cr"
+path="res://.godot/imported/horse_grumble.wav-5e690dce2d101ec5094569d6fd62fe0f.sample"
+
+[deps]
+
+source_file="res://Spare sfx/horse_grumble.wav"
+dest_files=["res://.godot/imported/horse_grumble.wav-5e690dce2d101ec5094569d6fd62fe0f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

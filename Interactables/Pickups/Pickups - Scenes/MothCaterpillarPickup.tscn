@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://csd0rvqiif5a4"]
+[gd_scene load_steps=5 format=3 uid="uid://csd0rvqiif5a4"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_t0lpa"]
 [ext_resource type="Texture2D" uid="uid://bdhbrjl0us12a" path="res://Interactables/Pickups/Pickups - Art/Larvae.png" id="2_q13rh"]
+[ext_resource type="AudioStream" uid="uid://d3mexicf51n7y" path="res://Spare sfx/leaf_crunch.wav" id="3_mo3ei"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q13rh"]
 radius = 140.69284
@@ -37,6 +38,10 @@ position = Vector2(40.19814, 60.296963)
 rotation = -1.5411066
 scale = Vector2(1.1754665, 1.652038)
 shape = SubResource("CapsuleShape2D_q13rh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mo3ei")
+volume_db = 1.0
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]

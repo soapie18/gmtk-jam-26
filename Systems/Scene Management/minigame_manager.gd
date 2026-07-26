@@ -6,9 +6,9 @@ extends Node2D
 # For when a minigame needs to be instantiated on request.
 @onready var pond_minigame_file = preload("res://Minigame Files/FishingGame/fishing_pond.tscn")
 @onready var nest_minigame_file = preload("res://Minigame Files/NestRepairGame/PigeonNestRepair.tscn")
-@onready var leaves_minigame_file
-@onready var spider_minigame_file
-@onready var branch_minigame_file
+@onready var leaves_minigame_file = preload("res://Minigame Files/LeavesScene/leaves_scene.tscn")
+#@onready var spider_minigame_file
+@onready var branch_minigame_file = preload("res://Minigame Files/BranchScene/branch_scene.tscn")
 
 var selected_minigame: PackedScene
 var current_active_minigame
@@ -56,12 +56,12 @@ func handle_minigame_request(minigame_name_tag) -> void:
 			cleanup_function = Callable(leaves_task_end)
 			
 			chosen_audio_index = 4
-		"spider":
-			selected_minigame = spider_minigame_file
-			
-			cleanup_function = Callable(spider_minigame_end)
-			
-			chosen_audio_index = 7
+		#"spider":
+			#selected_minigame = spider_minigame_file
+			#
+			#cleanup_function = Callable(spider_minigame_end)
+			#
+			#chosen_audio_index = 7
 		"branch":
 			selected_minigame = branch_minigame_file
 			

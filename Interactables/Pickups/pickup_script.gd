@@ -5,6 +5,8 @@ extends Node2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sprite_2: Sprite2D = $Sprite2D2 
 
+@onready var audio = $AudioStreamPlayer
+
 var default_sprite_scale: Vector2
 var sprite_scale_multiplier: float = 1.1
 
@@ -20,6 +22,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			item_collected.emit(name_tag)
 			
+			audio.play()
+			
+			#TODO make it so that theres a delay here so that audio has a chance to play
 			self.queue_free()
 
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddro13bybuvku"]
+[gd_scene load_steps=5 format=3 uid="uid://ddro13bybuvku"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_03kl3"]
 [ext_resource type="Texture2D" uid="uid://dyi8gkdwd4mkr" path="res://Interactables/Pickups/Pickups - Art/Caterpillar.png" id="2_witue"]
+[ext_resource type="AudioStream" uid="uid://d3mexicf51n7y" path="res://Spare sfx/leaf_crunch.wav" id="3_ft712"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtc1w"]
 radius = 135.83731
@@ -35,6 +36,10 @@ flip_h = true
 position = Vector2(38.223938, 57.335896)
 rotation = 1.7333059
 shape = SubResource("CapsuleShape2D_gtc1w")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ft712")
+volume_db = 1.0
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]

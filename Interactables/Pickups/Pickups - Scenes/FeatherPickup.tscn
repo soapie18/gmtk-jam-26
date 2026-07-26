@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://wlvvbfpmbt57"]
+[gd_scene load_steps=5 format=3 uid="uid://wlvvbfpmbt57"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_k4y58"]
 [ext_resource type="Texture2D" uid="uid://fna3e1tfgexg" path="res://Interactables/Pickups/Pickups - Art/Feather.png" id="2_qap32"]
+[ext_resource type="AudioStream" uid="uid://qby6urydt6kj" path="res://Spare sfx/pigeon_coos.wav" id="3_y0lmr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fj8k"]
 radius = 100.963455
@@ -24,6 +25,10 @@ rotation = 0.4482608
 shape = SubResource("CapsuleShape2D_7fj8k")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y0lmr")
+volume_db = 3.0
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]

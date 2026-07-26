@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xq66jkqtxu1p"]
+[gd_scene load_steps=5 format=3 uid="uid://xq66jkqtxu1p"]
 
 [ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_ysmp1"]
 [ext_resource type="Texture2D" uid="uid://ljtt8l718a4l" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Log.png" id="2_s8wvo"]
+[ext_resource type="AudioStream" uid="uid://hhbxyrliwj7" path="res://Spare sfx/sticks_falling.wav" id="3_sqs3e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqs3e"]
 radius = 293.13422
@@ -22,5 +23,8 @@ texture = ExtResource("2_s8wvo")
 position = Vector2(23.206749, 51.05485)
 rotation = -1.9710405
 shape = SubResource("CapsuleShape2D_sqs3e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sqs3e")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

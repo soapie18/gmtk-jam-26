@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://p3dgijjle0k"]
+[gd_scene load_steps=5 format=3 uid="uid://p3dgijjle0k"]
 
 [ext_resource type="Script" uid="uid://bf7vekt5182ec" path="res://Interactables/Pickups/pickup_script.gd" id="1_u2l00"]
 [ext_resource type="Texture2D" uid="uid://be3hx157hposp" path="res://Interactables/Pickups/Pickups - Art/Stick_04.png" id="2_4tg82"]
+[ext_resource type="AudioStream" uid="uid://c7qick0gjest4" path="res://Spare sfx/stick_rustle3.wav" id="3_j4jy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4jy1"]
 size = Vector2(932.2274, 115.04385)
@@ -22,6 +23,10 @@ rotation = -0.7884591
 shape = SubResource("RectangleShape2D_j4jy1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j4jy1")
+volume_db = 1.0
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]

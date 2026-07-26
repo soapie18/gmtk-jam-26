@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://en8mmvro3bud"]
+[gd_scene load_steps=5 format=3 uid="uid://en8mmvro3bud"]
 
 [ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_q6kfv"]
 [ext_resource type="Texture2D" uid="uid://b2qtqo8d615rq" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Leaf_Nom.png" id="2_jbh43"]
+[ext_resource type="AudioStream" uid="uid://d3mexicf51n7y" path="res://Spare sfx/leaf_crunch.wav" id="3_k6yi0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6kfv"]
 size = Vector2(987.48706, 1031.25)
@@ -21,5 +22,8 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(27.621199, 66.290886)
 shape = SubResource("RectangleShape2D_q6kfv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k6yi0")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl1vl32kakjrj"]
+[gd_scene load_steps=5 format=3 uid="uid://cl1vl32kakjrj"]
 
 [ext_resource type="Script" uid="uid://d2p07xilnkviy" path="res://Interactables/Minigames and Tasks/minigame_item_script.gd" id="1_24sca"]
 [ext_resource type="Texture2D" uid="uid://bg2y20ye8j5pn" path="res://Interactables/Minigames and Tasks/Minigame Items - Art/Pond.png" id="2_8d6xr"]
+[ext_resource type="AudioStream" uid="uid://ce0uf8426uo8h" path="res://Spare sfx/waterfall_woosh.wav" id="3_qfpq5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_us6ql"]
 radius = 335.3482
@@ -22,5 +23,8 @@ texture = ExtResource("2_8d6xr")
 position = Vector2(105.74586, 80.22099)
 rotation = -1.5994304
 shape = SubResource("CapsuleShape2D_us6ql")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qfpq5")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
