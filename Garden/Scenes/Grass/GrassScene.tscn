@@ -66,6 +66,7 @@ position = Vector2(655, 304)
 
 [node name="Flowers" parent="." instance=ExtResource("8_nqyqc")]
 position = Vector2(844, 449)
+flower_identifier = "grass"
 
 [connection signal="pressed" from="CanvasLayer/TreetopButton" to="CanvasLayer/TreetopButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/PondButton" to="CanvasLayer/PondButton" method="_on_pressed"]
