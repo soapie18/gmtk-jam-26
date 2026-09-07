@@ -24,7 +24,7 @@ texture = ExtResource("3_pw70c")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_dcs4y")
-volume_db = -3.0
+volume_db = -10.0
 
 [node name="cocoon1" type="Sprite2D" parent="."]
 position = Vector2(609.00006, 415)

@@ -20,6 +20,7 @@ var can_start_minigame: bool = false
 signal minigame_inventory_query(items_required: Array)
 signal add_loot_to_inventory(loot: String)
 signal audio_change_request(audio_index: int)
+signal toggle_garden_scene(is_active: bool)
 
 func _ready() -> void:
 	scene_manager.minigame_requested_in_scene.connect(handle_minigame_request)
@@ -72,11 +73,12 @@ func handle_minigame_request(minigame_name_tag) -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	if can_start_minigame:
-		print("ready to start this minigame!")
 		current_active_minigame = selected_minigame.instantiate()
 		add_child(current_active_minigame)
 		
 		audio_change_request.emit(chosen_audio_index)
+		
+		toggle_garden_scene.emit(false)
 		
 		# Every minigame/task will have a signal called this, but will be
 		# connected to a unique function to handle its cleanup, as found
@@ -98,6 +100,8 @@ func cleanup_minigame() -> void:
 
 func fishing_minigame_end(success: bool) -> void:
 	print("fishing game terminated")
+	
+	toggle_garden_scene.emit(true)
 	cleanup_minigame()
 	
 	audio_change_request.emit(1)
@@ -110,12 +114,15 @@ func fishing_minigame_end(success: bool) -> void:
 func leaves_task_end() -> void:
 	audio_change_request.emit(1)
 	scene_manager.handle_creatures_fed("monarch")
+	toggle_garden_scene.emit(true)
 	cleanup_minigame()
 
 func branch_task_end() -> void:
 	audio_change_request.emit(1)
 	scene_manager.handle_creatures_fed("moth")
+	toggle_garden_scene.emit(true)
 	cleanup_minigame()
+	
 
 func nest_minigame_end(success: bool) -> void:
 	audio_change_request.emit(1)
@@ -124,9 +131,6 @@ func nest_minigame_end(success: bool) -> void:
 		scene_manager.change_nest_sprite("fixed")
 		
 		day_manager.nest_fixed = true
-
-	cleanup_minigame()
-
-func spider_minigame_end() -> void:
-	audio_change_request.emit(1)
+	
+	toggle_garden_scene.emit(true)
 	cleanup_minigame()

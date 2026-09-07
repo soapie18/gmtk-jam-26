@@ -6,6 +6,7 @@ extends Node2D
 @onready var pond_scene = preload("res://Garden/Scenes/Pond/PondScene.tscn")
 
 @onready var pause_menu = $"../PauseWindow"
+@onready var minigame_manager = $"../MinigameManager"
 
 var current_scene_instance
 var main_menu_instance
@@ -41,6 +42,9 @@ func _ready() -> void:
 	# Connecting to quit signals.
 	pause_menu.quit_game.connect(handle_quit)
 	main_menu_instance.quit_game.connect(handle_quit)
+	
+	# Connecting to minigame manager signal.
+	minigame_manager.toggle_garden_scene.connect(toggle_garden_active)
 
 func handle_scene_change(target_scene_name: String) -> void:
 	audio_change_request.emit(1)
@@ -90,6 +94,14 @@ func handle_item_picked_up(item_name_tag: String, _scene_name: String) -> void:
 func handle_minigame_request(minigame_name_tag: String):
 	# Picked up in minigame_manager.
 	minigame_requested_in_scene.emit(minigame_name_tag)
+
+func toggle_garden_active(active: bool):
+	if !active:
+		print("garden inactive")
+		remove_child(current_scene_instance)
+	else:
+		add_child(current_scene_instance)
+		print("garden active")
 
 func handle_quit() -> void:
 	# Freeing scenes from memory.

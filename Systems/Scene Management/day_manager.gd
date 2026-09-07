@@ -3,8 +3,10 @@ extends Node2D
 @onready var scene_manager = $"../SceneManager"
 @onready var minigame_manager = $"../MinigameManager"
 
-@onready var day_end_screen = preload("res://Systems/Scene Management/day_end_screen.tscn")
+@onready var day_1_screen = preload("res://Systems/Scene Management/day_end_screen1.tscn")
+@onready var day_2_screen = preload("res://Systems/Scene Management/day_end_screen2.tscn")
 var day_end_screen_instance
+var win_screen_instance
 
 @onready var gameover_screen1 = preload("res://Systems/Scene Management/Gameover Scenarios/gameover_1.tscn")
 @onready var gameover_screen2 = preload("res://Systems/Scene Management/Gameover Scenarios/gameover_2.tscn")
@@ -26,7 +28,7 @@ signal audio_change_request
 
 func _ready() -> void:
 	
-	day_end_screen_instance = day_end_screen.instantiate()
+	day_end_screen_instance = day_1_screen.instantiate()
 	
 	scene_manager.flowers_watered.connect(update_flowers_watered)
 	scene_manager.creature_fed.connect(update_creatures_fed)
@@ -51,45 +53,42 @@ func update_creatures_fed(identifier: String) -> void:
 		"moth":
 			larvae_fed = true
 
-
-func customise_day_end_screen() -> void:
-	day_end_screen_instance.label.text = "Night has fallen on day two..."
-	day_end_screen_instance.sprite.texture = load("res://Interactables/Pickups/Pickups - Art/Cocoon.png")
-	day_end_screen_instance.sprite2.texture = load("res://Interactables/Pickups/Pickups - Art/Chrysalis.png")
-	day_end_screen_instance.sprite3.texture = load("res://Interactables/Pickups/Pickups - Art/Chrysalis.png")
-
-
 func handle_day_ended() -> void:
 	print("day manager reached")
 	match day_index:
 		1:
 			if !caterpillars_fed || !larvae_fed:
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(3).timeout
+				audio_change_request.emit(4)
+				await get_tree().create_timer(4).timeout
 				
 				trigger_gameover_day1()
 				
 				remove_child(day_end_screen_instance)
 			else:
+				audio_change_request.emit(4)
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(3).timeout
+				await get_tree().create_timer(4).timeout
 				
 				setup_day2()
 				
 				remove_child(day_end_screen_instance)
 		2:
 			if !flowers_1_watered || !flowers_2_watered:
-				customise_day_end_screen()
+				audio_change_request.emit(4)
+				day_end_screen_instance = day_2_screen.instantiate()
 				
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(3).timeout
+				await get_tree().create_timer(4).timeout
 				
 				trigger_gameover_day2()
 				
 				remove_child(day_end_screen_instance)
 			else:
+				audio_change_request.emit(4)
+				day_end_screen_instance = day_2_screen.instantiate()
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(3).timeout
+				await get_tree().create_timer(4).timeout
 				
 				setup_day3()
 				
@@ -158,9 +157,11 @@ func setup_day3() -> void:
 func roll_credits() -> void:
 	audio_change_request.emit(0)
 	
-	var win_screen_instance = win_screen.instantiate()
+	win_screen_instance = win_screen.instantiate()
 	add_child(win_screen_instance)
-	
+
+
+func respond_to_leave():
 	win_screen_instance.queue_free()
 	day_end_screen_instance.queue_free()
 	

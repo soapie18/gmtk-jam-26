@@ -8,7 +8,7 @@
 default_font = ExtResource("1_ike7i")
 default_font_size = 30
 
-[node name="DayEndScreen" type="CanvasLayer"]
+[node name="DayEndScreen1" type="CanvasLayer"]
 script = ExtResource("1_0qd3t")
 
 [node name="ColorRect" type="ColorRect" parent="."]

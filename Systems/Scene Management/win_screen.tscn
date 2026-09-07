@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfp542revnhkk"]
+[gd_scene load_steps=8 format=3 uid="uid://bfp542revnhkk"]
 
 [ext_resource type="Texture2D" uid="uid://l4iyyw4hjjfd" path="res://Interactables/Pickups/Pickups - Art/Moth.png" id="1_nxjkt"]
+[ext_resource type="Script" uid="uid://bwwpfpobo4qix" path="res://Systems/Scene Management/win_screen.gd" id="1_p15lu"]
 [ext_resource type="Texture2D" uid="uid://jjoxpgis1nc5" path="res://Interactables/Pickups/Pickups - Art/Monarch.png" id="2_1w1qs"]
 [ext_resource type="FontFile" uid="uid://dnwmhegqcp71g" path="res://Menus/Menus - Art/Chalkboard-Regular.ttf" id="3_p15lu"]
+[ext_resource type="Theme" uid="uid://dr6shbyjqa1k3" path="res://Menus/Menus - Art/default_text_theme.tres" id="5_u23xl"]
 
 [sub_resource type="Theme" id="Theme_u23xl"]
 default_font = ExtResource("3_p15lu")
@@ -13,6 +15,7 @@ default_font = ExtResource("3_p15lu")
 default_font_size = 22
 
 [node name="WinScreen" type="CanvasLayer"]
+script = ExtResource("1_p15lu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -88,3 +91,46 @@ position = Vector2(289, 412)
 scale = Vector2(0.14598483, 0.14598483)
 texture = ExtResource("2_1w1qs")
 flip_h = true
+
+[node name="leave text" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = 200.0
+offset_right = 232.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_u23xl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "click          to leave the garden"
+horizontal_alignment = 1
+
+[node name="leave text2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = 200.0
+offset_right = -70.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_u23xl")
+theme_override_colors/font_color = Color(0.9882353, 0.67058825, 0, 1)
+text = "here"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 430.0
+offset_top = 518.0
+offset_right = 515.0
+offset_bottom = 559.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
