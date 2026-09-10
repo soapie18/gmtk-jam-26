@@ -29,6 +29,9 @@ signal audio_change_request
 func _ready() -> void:
 	
 	day_end_screen_instance = day_1_screen.instantiate()
+	win_screen_instance = win_screen.instantiate()
+	
+	win_screen_instance.leave_requested.connect(respond_to_leave)
 	
 	scene_manager.flowers_watered.connect(update_flowers_watered)
 	scene_manager.creature_fed.connect(update_creatures_fed)
@@ -60,7 +63,7 @@ func handle_day_ended() -> void:
 			if !caterpillars_fed || !larvae_fed:
 				add_child(day_end_screen_instance)
 				audio_change_request.emit(4)
-				await get_tree().create_timer(4).timeout
+				await get_tree().create_timer(5).timeout
 				
 				trigger_gameover_day1()
 				
@@ -68,7 +71,7 @@ func handle_day_ended() -> void:
 			else:
 				audio_change_request.emit(4)
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(4).timeout
+				await get_tree().create_timer(5).timeout
 				
 				setup_day2()
 				
@@ -79,7 +82,7 @@ func handle_day_ended() -> void:
 				day_end_screen_instance = day_2_screen.instantiate()
 				
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(4).timeout
+				await get_tree().create_timer(5).timeout
 				
 				trigger_gameover_day2()
 				
@@ -88,7 +91,7 @@ func handle_day_ended() -> void:
 				audio_change_request.emit(4)
 				day_end_screen_instance = day_2_screen.instantiate()
 				add_child(day_end_screen_instance)
-				await get_tree().create_timer(4).timeout
+				await get_tree().create_timer(5).timeout
 				
 				setup_day3()
 				
@@ -130,6 +133,7 @@ func trigger_gameover_day2() -> void:
 
 
 func setup_day2() -> void:
+	audio_change_request.emit(1)
 	# Change branch scene for closeup.
 	minigame_manager.branch_minigame_file = preload("res://Minigame Files/BranchScene/BranchSceneDay2.tscn")
 	# Change leaves scene for closeup.
@@ -147,6 +151,7 @@ func setup_day2() -> void:
 
 
 func setup_day3() -> void:
+	audio_change_request.emit(1)
 	# Change branch scene for closeup.
 	minigame_manager.branch_minigame_file = preload("res://Minigame Files/BranchScene/BranchSceneDay3.tscn")
 	# Change leaves scene for closeup.
@@ -157,7 +162,6 @@ func setup_day3() -> void:
 func roll_credits() -> void:
 	audio_change_request.emit(0)
 	
-	win_screen_instance = win_screen.instantiate()
 	add_child(win_screen_instance)
 
 

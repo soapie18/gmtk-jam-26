@@ -16,14 +16,29 @@ script = ExtResource("1_pc2b8")
 layer = 0
 script = ExtResource("4_wc1dy")
 
+[node name="invtext" type="Label" parent="PlayerUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -48.0
+offset_right = 170.0
+offset_bottom = -13.0
+grow_vertical = 0
+theme = ExtResource("4_pc2b8")
+theme_override_font_sizes/font_size = 38
+text = "Inventory"
+horizontal_alignment = 1
+
 [node name="InventoryView" type="Button" parent="PlayerUI"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = -61.0
-offset_right = 104.0
-offset_bottom = -15.0
+offset_top = -54.0
+offset_right = 171.0
+offset_bottom = -9.0
 grow_vertical = 0
 text = "Inventory"
 
@@ -31,23 +46,40 @@ text = "Inventory"
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 125.0
-offset_top = -48.0
-offset_right = 165.0
-offset_bottom = -25.0
+offset_left = 192.0
+offset_top = -43.0
+offset_right = 232.0
+offset_bottom = -12.0
 grow_vertical = 0
 theme = ExtResource("4_pc2b8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="TextCooldown" type="Timer" parent="PlayerUI"]
 
-[node name="EndDay" type="Button" parent="PlayerUI"]
+[node name="enddaytext" type="Label" parent="PlayerUI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -100.0
+offset_left = -212.0
+offset_top = 21.0
+offset_right = -21.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme = ExtResource("4_pc2b8")
+theme_override_font_sizes/font_size = 38
+text = "End the Day"
+horizontal_alignment = 1
+
+[node name="EndDay" type="Button" parent="PlayerUI"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -215.0
 offset_top = 16.0
 offset_right = -20.0
-offset_bottom = 83.0
+offset_bottom = 58.0
 grow_horizontal = 0
 text = "End Day"
 

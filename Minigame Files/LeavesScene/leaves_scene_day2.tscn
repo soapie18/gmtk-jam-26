@@ -42,7 +42,7 @@ texture = ExtResource("3_h5b0o")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_o215g")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
